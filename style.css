@@ -645,6 +645,9 @@ body {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+.article-col .photo-fig {
+  margin-bottom: 2em;
+}
 .scene-photo {
   display: block; width: 100%; height: auto;
   object-fit: cover;
