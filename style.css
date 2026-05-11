@@ -476,6 +476,12 @@ body {
   color: #f0ece4;
   line-height: 1.25;
 }
+.stark-quote cite {
+  display: block; margin-top: 20px;
+  font-family: var(--mono); font-size: 0.62rem;
+  letter-spacing: .08em; font-style: normal;
+  color: #f0ece4;
+}
 
 /* ════════════════════════════════════════════════
    STAT HERO (school name + big numbers — always dark)
