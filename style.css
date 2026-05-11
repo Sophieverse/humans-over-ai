@@ -313,7 +313,7 @@ body {
 .ch-title-big em::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: -28px;
+  left: 0; right: 0.5em; bottom: -10px;
   height: 5px; border-radius: 3px;
   background: var(--ch);
   transform: scaleX(0);
