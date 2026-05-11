@@ -94,6 +94,7 @@ function initChapterTracking() {
   const bar = document.getElementById('progress-bar');
   const CHAPTER_ORDER = ['ch1', 'ch2', 'ch3', 'ch4', 'ch5'];
   const visible = new Set();
+  let dwellTimer = null;
 
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -104,15 +105,18 @@ function initChapterTracking() {
       }
     });
 
-    const activeId = CHAPTER_ORDER.find(id => visible.has(id));
-    if (!activeId) return;
+    clearTimeout(dwellTimer);
+    dwellTimer = setTimeout(() => {
+      const activeId = CHAPTER_ORDER.find(id => visible.has(id));
+      if (!activeId) return;
 
-    const color = CHAPTER_COLORS[activeId] || '#888';
-    navItems.forEach(item => {
-      item.classList.toggle('active', item.dataset.target === activeId);
-    });
-    bar.style.background = color;
-    bar.style.boxShadow = `0 0 8px ${color}`;
+      const color = CHAPTER_COLORS[activeId] || '#888';
+      navItems.forEach(item => {
+        item.classList.toggle('active', item.dataset.target === activeId);
+      });
+      bar.style.background = color;
+      bar.style.boxShadow = `0 0 8px ${color}`;
+    }, 450);
   }, { threshold: 0, rootMargin: '-10% 0px -60% 0px' });
 
   chapters.forEach(ch => obs.observe(ch));
