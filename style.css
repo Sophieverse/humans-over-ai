@@ -199,13 +199,13 @@ body {
 
 .sb-num {
   font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
-  color: var(--muted); padding-top: 3px; flex-shrink: 0; min-width: 20px;
+  color: var(--text-dim); padding-top: 3px; flex-shrink: 0; min-width: 20px;
 }
 .sb-item.active .sb-num { color: var(--item-col, #888); }
 
 .sb-label {
   font-family: var(--serif); font-size: 0.85rem; line-height: 1.35;
-  color: var(--text-dim);
+  color: var(--text);
 }
 .sb-item.active .sb-label { color: var(--text); font-weight: 600; }
 
@@ -384,7 +384,7 @@ body {
 }
 .pull-quote cite {
   font-family: var(--mono); font-size: 0.62rem;
-  letter-spacing: .07em; color: var(--text-dim);
+  letter-spacing: .07em; color: var(--text);
   font-style: normal; line-height: 1.6;
 }
 
@@ -405,7 +405,7 @@ body {
 .doctrine-wrap cite {
   font-family: var(--mono); font-size: 0.62rem;
   letter-spacing: .14em; text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text-dim);
 }
 
 /* Stark single-line quote (for dramatic moments) */
@@ -444,7 +444,7 @@ body {
 .stat-hero-location {
   font-family: var(--mono); font-size: 0.6rem;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: #6a6662; margin-bottom: 72px;
+  color: #c8c4be; margin-bottom: 72px;
 }
 .stat-hero-nums {
   display: flex; align-items: center; justify-content: center;
@@ -458,10 +458,10 @@ body {
   font-size: clamp(64px, 9vw, 130px); line-height: 1; margin-bottom: 10px;
 }
 .stat-hero-num:first-child .stat-hero-big { color: #c41e3a; }
-.stat-hero-num:last-child  .stat-hero-big { color: #b0aca4; }
+.stat-hero-num:last-child  .stat-hero-big { color: #e8e4dc; }
 .stat-hero-label {
   font-family: var(--mono); font-size: 0.52rem;
-  letter-spacing: 0.18em; text-transform: uppercase; color: #5a5652;
+  letter-spacing: 0.18em; text-transform: uppercase; color: #c8c4be;
 }
 
 .stat-hero--compact {
@@ -498,7 +498,7 @@ body {
 .stat-callout-text {
   font-family: var(--serif);
   font-size: clamp(17px, 1.8vw, 22px);
-  line-height: 1.65; color: #c8c4bc;
+  line-height: 1.65; color: #f0ece4;
 }
 
 @media (max-width: 700px) {
@@ -522,7 +522,7 @@ body {
 figcaption {
   padding: 10px clamp(24px,6vw,80px);
   font-family: var(--mono); font-size: 0.58rem;
-  letter-spacing: .08em; color: var(--text-dim);
+  letter-spacing: .08em; color: var(--text);
   border-top: 1px solid var(--border);
 }
 
@@ -547,7 +547,7 @@ figcaption {
 .ba-caption {
   padding: 10px clamp(24px,6vw,80px);
   font-family: var(--mono); font-size: 0.58rem;
-  letter-spacing: .08em; color: var(--text-dim);
+  letter-spacing: .08em; color: var(--text);
   border-top: 1px solid var(--border);
   margin: 0;
 }
@@ -586,7 +586,7 @@ figcaption {
 }
 .gc-source {
   font-family: var(--mono); font-size: 0.58rem;
-  color: var(--muted); letter-spacing: .06em;
+  color: var(--text-dim); letter-spacing: .06em;
 }
 .gc-cta {
   display: inline-block; margin-top: 14px;
