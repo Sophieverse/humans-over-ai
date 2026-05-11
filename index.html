@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Humans over AI — The AI That Cleared 175 to Die</title>
-  <meta name="description" content="How Palantir's Maven Smart System compressed the kill chain — and why 175 people, most of them children, paid the price.">
-  <meta property="og:title" content="Humans over AI">
-  <meta property="og:description" content="How Palantir's Maven Smart System compressed the kill chain — and why 175 people, most of them children, paid the price.">
+  <title>Wake Up, America — Humans over AI</title>
+  <meta name="description" content="Four chapters on what AI is doing to war, privacy, the climate, and your children.">
+  <meta property="og:title" content="Wake Up, America">
+  <meta property="og:description" content="Four chapters on what AI is doing to war, privacy, the climate, and your children.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,229 +14,384 @@
 </head>
 <body>
 
-  <!-- ─── TERMINAL INTRO OVERLAY ─── -->
-  <div id="terminal-overlay" role="dialog" aria-label="Loading sequence">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <span class="t-dot t-red"></span>
-        <span class="t-dot t-yellow"></span>
-        <span class="t-dot t-green"></span>
-        <span class="t-title">MAVEN SMART SYSTEM — v4.2.1 — OPERATIONAL LOG</span>
-      </div>
-      <div id="terminal-output" aria-live="polite"></div>
-      <span id="t-cursor" class="t-blink">▌</span>
+<!-- ─── TERMINAL OVERLAY ─── -->
+<div id="terminal-overlay">
+  <div class="t-window">
+    <div class="t-bar">
+      <span class="t-dot r"></span>
+      <span class="t-dot y"></span>
+      <span class="t-dot g"></span>
+      <span class="t-name">WAKE UP, AMERICA — AI CRISIS REPORT</span>
     </div>
-    <button id="skip-intro" aria-label="Skip introduction">skip intro →</button>
+    <div id="t-out"></div>
+    <span id="t-cur" class="blink">▌</span>
   </div>
+  <button id="skip-btn">skip intro →</button>
+</div>
 
-  <!-- ─── SCROLL PROGRESS BAR ─── -->
-  <div id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+<!-- ─── SIDEBAR ─── -->
+<nav id="sidebar" aria-label="Chapter navigation">
+  <div class="sb-brand">
+    <p class="sb-pub mono">Humans over AI</p>
+    <span class="sb-title">Wake Up,<br>America</span>
+  </div>
+  <ul class="sb-nav">
+    <li class="sb-item active" data-target="ch1" data-color="#c41e3a">
+      <span class="sb-num">01</span>
+      <span class="sb-label">Crimes Against<br>Humanity</span>
+    </li>
+    <li class="sb-item" data-target="ch2" data-color="#1a7bc4">
+      <span class="sb-num">02</span>
+      <span class="sb-label">Privacy &<br>Democracy</span>
+    </li>
+    <li class="sb-item" data-target="ch3" data-color="#2d9e4f">
+      <span class="sb-num">03</span>
+      <span class="sb-label">Clean Air<br>&amp; Climate</span>
+    </li>
+    <li class="sb-item" data-target="ch4" data-color="#c49a1a">
+      <span class="sb-num">04</span>
+      <span class="sb-label">Child Safety &amp;<br>Mental Health</span>
+    </li>
+  </ul>
+  <div class="sb-footer mono">
+    Sources: NYT · Guardian · 404 Media ·<br>
+    Brennan Center · WNYC · Breaking Defense ·<br>
+    SELC · Pew Research · NewsGuard
+  </div>
+</nav>
 
-  <!-- ─── MAIN ARTICLE ─── -->
-  <main id="article" class="hidden">
+<!-- ─── MOBILE TOGGLE ─── -->
+<button id="menu-btn" aria-label="Toggle navigation">☰</button>
 
-    <!-- HERO -->
-    <header class="hero">
-      <div class="hero-eyebrow">
-        <span class="mono accent">February 28</span>
-        <span class="eyebrow-dot">·</span>
-        <span class="mono muted">AI Warfare · Civilian Harm · Accountability</span>
-      </div>
-      <h1 class="headline">Machine-<br><em>Generated</em></h1>
-      <p class="deck">How Palantir's Maven Smart System compressed the kill chain&thinsp;—&thinsp;and why 175 people, most of them children, paid the price.</p>
-      <div class="scroll-hint mono muted" aria-hidden="true">scroll ↓</div>
-    </header>
+<!-- ─── PROGRESS BAR ─── -->
+<div id="progress-bar"></div>
 
-    <!-- STATS BAR -->
-    <div class="stats-bar" aria-label="Key statistics">
-      <div class="stat">
-        <div class="stat-num-wrap">
-          <span class="stat-num" data-target="1000">0</span><span class="stat-plus">+</span>
-        </div>
-        <span class="stat-label">targets struck<br>in 24 hours</span>
+<!-- ═══════════════════════════════════════════════
+     MAIN CONTENT
+     ═══════════════════════════════════════════════ -->
+<main id="main">
+
+  <!-- ══════════════════════════════════
+       CHAPTER 1: CRIMES AGAINST HUMANITY
+       ══════════════════════════════════ -->
+  <section id="ch1" class="chapter">
+
+    <div class="ch-hero">
+      <div class="ch-eyebrow">
+        <span class="ch-num-tag mono">01</span>
+        <span class="ch-cat mono">War · AI Targeting · Civilian Harm</span>
       </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat">
-        <div class="stat-num-wrap">
-          <span class="stat-num" data-target="175">0</span>
-        </div>
-        <span class="stat-label">killed at<br>Minab school</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat">
-        <div class="stat-num-wrap">
-          <span class="stat-num" data-target="100">0</span><span class="stat-plus">+</span>
-        </div>
-        <span class="stat-label">of them were<br>children</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat">
-        <div class="stat-num-wrap">
-          <span class="stat-num" data-target="50">0</span><span class="stat-plus">%</span>
-        </div>
-        <span class="stat-label">cut to weapons<br>testing oversight</span>
-      </div>
+      <h2 class="ch-title-big">Crimes Against<br><em>Humanity</em></h2>
+      <p class="ch-address">To the people who care about war, suffering, and death:</p>
+      <span class="scroll-cue mono">scroll ↓</span>
     </div>
 
-    <!-- SECTION 1: THE STRIKE -->
-    <article class="body">
-      <section class="section reveal">
-        <p class="drop-cap">On February 28th, Palantir's Maven Smart System did its job.</p>
-        <p>Using Claude, it processed intelligence data from the Department of Defense, generated coordinates for each strike, ranked targets in terms of strategic importance, and even <em>"draft[ed] automated legal justifications for each strike."</em> With Maven, the U.S. military was able to hit more than 1,000 targets in the first 24 hours of the war.</p>
-      </section>
-    </article>
-
-    <!-- SCHOOL INTERLUDE (full-width breakout) -->
-    <div class="school-interlude reveal" role="region" aria-label="The school">
-      <p class="interlude-eyebrow mono">One of those "strategically important" targets</p>
-      <h2 class="school-name">Shajareh Tayyebeh<br>Elementary School</h2>
-      <p class="school-location mono">Minab, Iran</p>
-      <div class="school-facts">
-        <div class="school-fact">
-          <span class="big-num" data-target="175">0</span>
-          <span class="fact-label">killed</span>
-        </div>
-        <div class="school-fact-divider" aria-hidden="true"></div>
-        <div class="school-fact">
-          <span class="big-num ages">7&thinsp;–&thinsp;12</span>
-          <span class="fact-label">ages of the majority</span>
-        </div>
-      </div>
-      <p class="source-note mono">Source: New York Times</p>
+    <!-- Guardian media cards -->
+    <div class="media-row reveal">
+      <a class="guardian-card" href="https://www.theguardian.com/world/video/2026/mar/01/iran-children-killed-school-bombing-us-israel-strikes-video" target="_blank" rel="noopener">
+        <p class="gc-label">▶ Video — The Guardian</p>
+        <p class="gc-title">Iran: children killed in school bombing – video</p>
+        <p class="gc-source">March 1, 2026</p>
+        <span class="gc-cta">Watch at The Guardian →</span>
+      </a>
+      <a class="guardian-card" href="https://www.theguardian.com/global-development/2026/mar/03/minab-school-bombing-how-the-worst-mass-casualty-event-of-the-iran-war-unfolded-a-visual-guide" target="_blank" rel="noopener">
+        <p class="gc-label">📍 Visual Guide — The Guardian</p>
+        <p class="gc-title">Minab school bombing: how the worst mass-casualty event of the Iran war unfolded</p>
+        <p class="gc-source">March 3, 2026</p>
+        <span class="gc-cta">Read at The Guardian →</span>
+      </a>
     </div>
 
-    <!-- SECTION 2: KILL CHAIN -->
-    <article class="body">
-      <section class="section reveal">
-        <h3 class="section-head">The Compressed Kill Chain</h3>
-        <p>The AI-powered Maven Smart System compressed the kill chain so dramatically that human oversight failed to keep up. As a result, over 100 innocent schoolchildren&thinsp;—&thinsp;each with big dreams and bright futures&thinsp;—&thinsp;are dead.</p>
-      </section>
+    <!-- Photo from PDF (image source: Guardian / Getty) -->
+    <figure class="photo-fig reveal">
+      <div class="photo-inner">
+        <p class="photo-farsi">شهیده مظلوم فاطمه یزدان پناه و اسرا فرحی زاده</p>
+        <p class="photo-farsi">شهیدان مظلوم و بی‌گناه دبستان شجره طیبه مینب</p>
+        <p class="photo-en">Families at a memorial rally for victims of the Shajareh Tayyebeh Elementary School, Minab. The poster shows Fatima Yazdan Panah and Esra Farahi Zadeh, two of the children killed.</p>
+      </div>
+      <figcaption>Image: <a href="https://www.theguardian.com/world/video/2026/mar/01/iran-children-killed-school-bombing-us-israel-strikes-video" target="_blank" rel="noopener" class="link">The Guardian</a></figcaption>
+    </figure>
 
-      <!-- Bryant quote -->
+    <div class="article-col">
+
+      <p class="drop-cap reveal">On February 28th, Palantir's Maven Smart System <a href="#" class="link">did its job</a>.</p>
+
+      <p class="reveal">Using Claude, it processed intelligence data from the Department of Defense, generated coordinates for each strike, ranked targets in terms of strategic importance, and even "draft[ed] automated legal justifications for each strike." With Maven, the U.S. military was able to hit "more than 1,000 targets in the first 24 hours of the war."</p>
+
+      <p class="reveal">One of those "strategically important" targets was <a href="#" class="link">Shajareh Tayyebeh Elementary School</a> in Minab, Iran. According to the New York Times, <a href="#" class="link">at least 175 people died</a>, the majority of whom were <strong>between the ages of seven and twelve years old.</strong></p>
+
+      <p class="reveal">The AI-powered Maven Smart System <strong>compressed the kill chain so dramatically that human oversight failed to keep up.</strong> As a result, over 100 innocent schoolchildren, each with big dreams and bright futures, are dead.</p>
+
+      <p class="reveal">The office that existed specifically to prevent strikes like Minab was <a href="#" class="link">already being dismantled</a> when Minab happened.</p>
+
+      <p class="reveal">The Civilian Protection Center of Excellence was created by Congress in 2022 to train commanders in how to avoid killing noncombatants. By early 2025, Defense Secretary Pete Hegseth had begun unwinding it. By June 2025, the Army had absorbed the Center into other offices– <a href="#" class="link">effectively killing it</a>, in the words of one official.</p>
+
+      <p class="reveal">Wes Bryant, an Air Force Special Operations veteran who had run civilian harm assessments at the Center, was placed on leave that March, resigned in September, and <a href="#" class="link">has since become a public critic</a> of the administration.</p>
+
       <blockquote class="pull-quote reveal">
-        <p>"Had that momentum kept going, there would have been, at the very least, more people in place focused just on this problem, double and triple-checking that every single entity we were looking at targeting in Iran was actually a valid military target."</p>
-        <cite>— Wes Bryant, Air Force Special Operations veteran, former civilian harm assessor at the Civilian Protection Center of Excellence, speaking to WNYC's <em>On the Media</em> after Minab</cite>
+        <p>"Had that momentum kept going," Bryant <a href="#" class="link">told WNYC's On the Media</a> after Minab, "there would have been, at the very least, more people in place focused just on this problem, double and triple-checking that every single entity we were looking at targeting in Iran was actually a valid military target."</p>
+        <cite>— Wes Bryant, Air Force Special Operations veteran</cite>
       </blockquote>
 
-      <!-- SECTION 3: DISMANTLING -->
-      <section class="section reveal">
-        <h3 class="section-head">Dismantling the Safeguards</h3>
-        <p>The office that existed specifically to prevent strikes like Minab was already being dismantled when Minab happened.</p>
-        <p>The <strong>Civilian Protection Center of Excellence</strong> was created by Congress in 2022 to train commanders in how to avoid killing noncombatants. By early 2025, Defense Secretary Pete Hegseth had begun unwinding it. By June 2025, the Army had absorbed the Center into other offices&thinsp;—&thinsp;effectively killing it, in the words of one official.</p>
-        <p>Wes Bryant, an Air Force Special Operations veteran who had run civilian harm assessments at the Center, was placed on leave that March, resigned in September, and has since become a public critic of the administration.</p>
-      </section>
+      <p class="reveal">He went further, calling Minab "pure negligence" – a predictable consequence of dismantling institutions meant to minimize civilian death tolls.</p>
 
-      <!-- Highlighted quote -->
-      <div class="highlighted-quote reveal">
-        <div class="hq-bar" aria-hidden="true"></div>
-        <p class="hq-text">Bryant called Minab <span class="accent">"pure negligence"</span>&thinsp;—&thinsp;a predictable consequence of dismantling institutions meant to minimize civilian death tolls.</p>
-      </div>
+      <p class="reveal">The Center was not the only oversight casualty. According to the <a href="#" class="link">Brennan Center for Justice</a>, Hegseth has reduced staffing at the Office of the Director of Operational Test and Evaluation by half. This is the office responsible for testing 268 weapons systems, some of them with deep AI integration.</p>
 
-      <!-- SECTION 4: MORE CUTS -->
-      <section class="section reveal">
-        <p>The Center was not the only oversight casualty. According to the Brennan Center for Justice, Hegseth reduced staffing at the Office of the Director of Operational Test and Evaluation by half&thinsp;—&thinsp;the office responsible for testing <strong>268 weapons systems</strong>, some of them with deep AI integration.</p>
-      </section>
-    </article>
+      <p class="reveal">Meanwhile, the AI itself is being given more autonomy. <strong>Nine days after Minab</strong>, the Pentagon <a href="#" class="link">"formalize[d] Palantir's Maven AI as a core military system with multi-year funding."</a> Maven is now a "program of record" locked into the protected defense budget.</p>
 
-    <!-- CALLOUT: 268 weapons (full-width) -->
-    <div class="callout reveal" role="region">
-      <span class="callout-num" data-target="268">0</span>
-      <p>weapons systems under the oversight of an office whose staff was cut in half. Some with deep AI integration. All now less watched.</p>
-    </div>
+      <p class="reveal">The direction was already clear before Minab. In June 2025, Vice Admiral Frank Whitworth, then director of the National Geospatial-Intelligence Agency, <a href="#" class="link">told an industry audience</a> that NGA had begun producing entire intelligence products without analyst involvement; the agency had even adopted a disclosure label, "Machine-generated GEOINT," to flag them. For some products, Whitworth said, "no human hands actually participate."</p>
 
-    <!-- SECTION 5: MORE AUTONOMY -->
-    <article class="body">
-      <section class="section reveal">
-        <h3 class="section-head">Meanwhile, the AI Gets More Authority</h3>
-        <p>Nine days after Minab, the Pentagon <em>"formalize[d] Palantir's Maven AI as a core military system with multi-year funding."</em> Maven is now a "program of record" locked into the protected defense budget.</p>
-        <p>The direction was already clear before Minab. In June 2025, Vice Admiral Frank Whitworth, then director of the National Geospatial-Intelligence Agency, told an industry audience that NGA had begun producing entire intelligence products without analyst involvement. The agency adopted a disclosure label&thinsp;—&thinsp;<span class="mono amber">"Machine-generated GEOINT"</span>&thinsp;—&thinsp;to flag them. For some products, Whitworth said, <em>"no human hands actually participate."</em></p>
-      </section>
-
-      <!-- Breaking Defense pull quote -->
       <blockquote class="pull-quote reveal">
         <p>[S]uch AI-generated intelligence products are now being circulated at the highest levels of the US government.</p>
-        <cite>— Breaking Defense</cite>
+        <cite>— <a href="#" class="link">Breaking Defense</a></cite>
       </blockquote>
 
-      <!-- SECTION 6: DOCTRINE -->
-      <section class="section reveal">
-        <h3 class="section-head">The Doctrine, Written Down</h3>
-        <p>The high-level doctrine behind these decisions was written down plainly in January. In a strategy memo, Hegseth declared the Pentagon an <strong>"AI-first warfighting force"</strong> and stated the principle plainly:</p>
-      </section>
-    </article>
+      <p class="reveal">The high-level doctrine behind these decisions was written down plainly in January. In <a href="#" class="link">a strategy memo</a>, Hegseth declared the Pentagon an "AI-first warfighting force" and stated the principle plainly: "We must accept that the risks of not moving fast enough outweigh the risks of imperfect alignment."</p>
 
-    <!-- DOCTRINE QUOTE (full-width) -->
-    <div class="doctrine-quote reveal">
-      <div class="dq-inner">
-        <p class="dq-text">"We must accept that the risks of not moving fast enough outweigh the risks of imperfect alignment."</p>
-        <p class="dq-attribution mono">— Defense Secretary Pete Hegseth, strategy memo, January 2025</p>
+      <p class="closing-line reveal">Minab is what 'imperfect alignment' looks like in practice.</p>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CHAPTER 2: PRIVACY & DEMOCRACY
+       ══════════════════════════════════ -->
+  <section id="ch2" class="chapter">
+
+    <div class="ch-hero">
+      <div class="ch-eyebrow">
+        <span class="ch-num-tag mono">02</span>
+        <span class="ch-cat mono">Surveillance · ICE · Disinformation</span>
       </div>
+      <h2 class="ch-title-big">Privacy &amp;<br><em>Democracy</em></h2>
+      <p class="ch-address">To the people who care about privacy and democracy:</p>
+      <span class="scroll-cue mono">scroll ↓</span>
     </div>
 
-    <!-- CLOSING -->
-    <article class="body">
-      <section class="section reveal closing-section">
-        <p>Minab is what <em>'imperfect alignment'</em> looks like in practice.</p>
-        <p>It looks like a school — its name meaning <em>Good Tree</em> in Farsi — reduced to rubble by coordinates generated by a machine, justified by a machine, authorized without adequate human review, after the humans who would have checked that work had been systematically removed from their posts.</p>
-        <p>The machine did its job. That was the problem.</p>
-      </section>
-    </article>
+    <div class="article-col">
 
-    <!-- TIMELINE -->
-    <section class="timeline-section reveal" aria-label="Chronology">
-      <h2 class="timeline-heading">A Chronology of Dismantling</h2>
-      <div class="timeline">
+      <p class="sub-head reveal">AI is being used to track your every move.</p>
 
-        <div class="tl-item">
-          <div class="tl-date mono">Jan 2025</div>
-          <div class="tl-dot" aria-hidden="true"></div>
-          <div class="tl-content">Hegseth declares Pentagon an <strong>"AI-first warfighting force"</strong> in strategy memo. States the doctrine: the risks of moving too slowly outweigh the risks of "imperfect alignment."</div>
-        </div>
+      <p class="reveal">Flock Safety is a private company that deploys many of the license plate tracking cameras in the United States. These cameras are known as "automated license plate readers (ALPR)" and typically capture 6-12 photos of every vehicle that passes by. They "use a combination of AI and machine learning to record data such as license plate numbers and a car's color, make, and model, along with extras like bumper stickers, body damage, roof racks, and temporary paper tags."</p>
 
-        <div class="tl-item">
-          <div class="tl-date mono">Early 2025</div>
-          <div class="tl-dot" aria-hidden="true"></div>
-          <div class="tl-content">Hegseth begins dismantling the <strong>Civilian Protection Center of Excellence</strong>. Staffing at the weapons testing oversight office is cut by half.</div>
-        </div>
+      <p class="reveal">Flock Safety also uses <strong>facial recognition</strong> in their ALPR cameras and drones; they reportedly capture and store photos of law-abiding U.S. citizens. Why they need this information to "track license plates" is unclear.</p>
 
-        <div class="tl-item tl-red">
-          <div class="tl-date mono">Feb 28</div>
-          <div class="tl-dot tl-dot-red" aria-hidden="true"></div>
-          <div class="tl-content"><strong>Maven strikes more than 1,000 targets in 24 hours.</strong> Shajareh Tayyebeh Elementary School in Minab, Iran is among them. 175 killed — the majority between ages 7 and 12.</div>
-        </div>
+      <blockquote class="indent-quote reveal">
+        <p>"At one point, it was possible for random strangers, stalkers, and creeps of all kinds to track your movements around your city or town using misconfigured cameras connected to Flock's network."</p>
+        <cite>–<a href="#" class="link">PC Mag</a></cite>
+      </blockquote>
 
-        <div class="tl-item">
-          <div class="tl-date mono">March 2025</div>
-          <div class="tl-dot" aria-hidden="true"></div>
-          <div class="tl-content">Wes Bryant placed on administrative leave. Nine days after Minab: Pentagon formalizes Maven as an official "program of record" with multi-year funding.</div>
-        </div>
+      <p class="reveal">Flock cameras were <a href="#" class="link">used in Texas</a> to <strong>track a woman who had self-administered an abortion.</strong> This was a nationwide search that pulled data from cameras in Washington state, where almost all abortions are legal.</p>
 
-        <div class="tl-item">
-          <div class="tl-date mono">June 2025</div>
-          <div class="tl-dot" aria-hidden="true"></div>
-          <div class="tl-content">Army absorbs Civilian Protection Center — effectively ending it. Vice Admiral Whitworth announces "Machine-generated GEOINT" products circulating at the highest levels of government with <em>zero human analyst involvement</em>.</div>
-        </div>
+      <hr class="ch-divider">
 
-        <div class="tl-item">
-          <div class="tl-date mono">Sept 2025</div>
-          <div class="tl-dot" aria-hidden="true"></div>
-          <div class="tl-content">Wes Bryant resigns. Becomes a public critic of the administration's approach to civilian harm. The machine, meanwhile, is a program of record.</div>
-        </div>
+      <p class="sub-head reveal"><em>AI is being used to help ICE <a href="#" class="link">terrorize children</a> and <a href="#" class="link">raid churches</a>.</em></p>
 
+      <p class="reveal">Even setting aside misconfigurations, the surveillance pipeline runs in directions Flock claims to control but doesn't. In May 2025, <a href="#" class="link">404 Media obtained data</a> showing local police had performed more than 4,000 Flock lookups on behalf of ICE despite no contract between the two– giving federal immigration enforcement "side-door access" to a nationwide camera network.</p>
+
+      <blockquote class="pull-quote reveal">
+        <p>The <a href="#" class="link">massive trove of lookup data</a>… shows more than 4,000 nation and statewide lookups by local and state police done either at the behest of the federal government or as an "informal" favor to federal law enforcement, or with a potential immigration focus, according to statements from police departments and sheriff offices collected by 404 Media. It shows that, <strong>while Flock does not have a contract with ICE,</strong> the agency sources data from Flock's cameras by making requests to local law enforcement.</p>
+        <cite>—<a href="https://www.404media.co/" class="link">404 Media</a></cite>
+      </blockquote>
+
+      <p class="reveal">By August, <a href="#" class="link">Customs and Border Protection had direct access</a> to more than 80,000 Flock cameras through an undisclosed pilot program. The <a href="#" class="link">University of Washington Center for Human Rights documented</a> the same pattern across Washington state, where local law enforcement opened up Flock networks to Border Patrol in eight jurisdictions; still more were used by Border Patrol without explicit authorization from local police.</p>
+
+      <blockquote class="pull-quote reveal">
+        <p>Flock audits reveal apparent "back door" access by U.S. Border Patrol to the networks of at least ten Washington police departments which did not explicitly authorize Border Patrol searches of their network data.</p>
+        <cite>–<a href="https://jsis.washington.edu/humanrights/" class="link">University of Washington</a></cite>
+      </blockquote>
+
+      <p class="reveal">Per the American Immigration Council, ICE's <a href="#" class="link">"private bounty hunters"</a> also "use AI to track immigrants" as part of a $1.2 billion program awarded to 13 private contractors in December 2025.</p>
+
+      <p class="reveal">In addition to Flock cameras, ICE is also using other AI systems:</p>
+
+      <blockquote class="indent-quote reveal">
+        <p>"Palantir's platforms, for example, have been used by ICE to… extract information from seized phones, cross-search location data, and link records from federal, state, and commercial databases. <a href="#" class="link">Wired reported</a> that these tools combine social media posts, travel records, tax data, and phone extractions into unified investigative files. <a href="#" class="link">NPR also documented</a> the use of mobile facial-recognition apps and iris scanners in field operations."</p>
+        <cite>—<a href="https://www.americanimmigrationcouncil.org/" class="link">American Immigration Council</a></cite>
+      </blockquote>
+
+      <p class="reveal">Whether you support mass deportations <strong>is not the point.</strong></p>
+
+      <p class="reveal">There's another country <a href="#" class="link">using AI in its mass surveillance operations</a>. They're an authoritarian regime, not a liberal democracy.</p>
+
+      <p class="reveal">And we're supposed to beat them in the AI race because we "have democratic values" and "protect civil liberties."</p>
+
+      <hr class="ch-divider">
+
+      <p class="sub-head reveal"><em>AI is being used to spread mass disinformation.</em></p>
+
+      <p class="reveal">Two days before Slovakia's 2023 parliamentary election, an audio clip went viral on Facebook. The voices were unmistakable: <a href="#" class="link">Michal Šimečka</a>, leader of the pro-European Progressive Slovakia party, and journalist Monika Tódová from Denník N, discussing <a href="#" class="link">how to rig the vote</a> by buying ballots from the country's Roma minority.</p>
+
+      <p class="reveal">Except, the conversation never happened. The recording was AI-generated, posted during Slovakia's mandatory 48-hour pre-election media silence– a window during which candidates and journalists are legally restricted from speaking. Šimečka, who was leading in pre-election polls, <a href="#" class="link">lost</a> to Robert Fico's pro-Russia SMER party. Fico, once in office, suspended Slovakia's state-funded military aid to Ukraine.</p>
+
+      <p class="reveal">Four months later, an AI-generated voice that sounded like President Biden called thousands of New Hampshire households two days before the state's 2024 presidential primary. "It's important that you save your vote for the November election," the voice said. "Voting this Tuesday only enables the Republicans in their quest to elect Donald Trump again." It was the <a href="#" class="link">first known use</a> of deepfake technology in a U.S. election. The political consultant behind the calls, Steve Kramer, has since been <a href="#" class="link">"charged with 13 felony counts of voter suppression"</a> and <a href="#" class="link">fined $6 million</a> by the FCC.</p>
+
+      <p class="reveal">These are the discrete cases big enough to break into the news; in reality, the scale is much larger.</p>
+
+      <p class="reveal"><a href="https://www.newsguardtech.com/" class="link">NewsGuard</a>, which tracks online misinformation, has identified 3,006 AI-generated content farm websites across 16 languages, all publishing news with little to no human oversight. Its August 2025 <a href="#" class="link">audit</a> <a href="#" class="link">found</a> that the ten leading AI chatbots– including ChatGPT, Claude, Gemini, and Grok– repeated provably false claims on news topics 35% of the time, nearly double the prior year's rate.</p>
+
+      <p class="reveal">Russian state disinformation networks have <a href="#" class="link">already begun using this</a> to their advantage. In April 2025, NewsGuard released an analysis about how "[a] Russian propaganda operation that <a href="#" class="link">previously took aim at elections in the U.S. and Germany</a>" was now targeting France. Their efforts reportedly drew <a href="#" class="link">55 million views</a> using AI-fabricated propaganda.</p>
+
+      <p class="closing-line reveal">A democracy requires citizens who can trust what they see and a government that cannot see everything. We are losing both.</p>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CHAPTER 3: CLEAN AIR & CLIMATE
+       ══════════════════════════════════ -->
+  <section id="ch3" class="chapter">
+
+    <div class="ch-hero">
+      <div class="ch-eyebrow">
+        <span class="ch-num-tag mono">03</span>
+        <span class="ch-cat mono">xAI · Emissions · Energy</span>
       </div>
-    </section>
+      <h2 class="ch-title-big">Clean Air<br>&amp; <em>Climate</em></h2>
+      <p class="ch-address">To the people who care about clean air and climate:</p>
+      <span class="scroll-cue mono">scroll ↓</span>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <p class="footer-title mono">Sources</p>
-        <p class="footer-sources">New York Times &nbsp;·&nbsp; Brennan Center for Justice &nbsp;·&nbsp; WNYC <em>On the Media</em> &nbsp;·&nbsp; Breaking Defense</p>
-        <p class="footer-note">This piece synthesizes public reporting on AI-assisted military targeting, the Minab strike, and the institutional dismantling of civilian harm oversight in 2025.</p>
+    <div class="article-col">
+
+      <p class="sub-head reveal"><em>AI is poisoning the air we breathe.</em></p>
+
+      <p class="reveal">It's July 2025, and Alexis Humphreys can't breathe.</p>
+
+      <p class="reveal">Five days earlier, Elon Musk's Grok 4 became <a href="#" class="link">one of the most powerful</a> large language models in the world. Now Humphreys is lying on her couch in Boxtown, struggling for air, inhaling the smell of gas that started wafting through her windows about a year ago. It's her first severe asthma attack in 15 years. "It felt like my chest was caving in," she <a href="#" class="link">tells TIME</a> soon after.</p>
+
+      <p class="reveal">A few miles from Humphreys's front porch, xAI runs Colossus— the company's self-described <a href="#" class="link">"world's largest AI supercomputer"</a>— on <a href="#" class="link"><strong>25 illegal</strong> gas turbines</a>.</p>
+
+      <p class="reveal">xAI has since expanded. Colossus 2 <a href="#" class="link">came online in January 2026</a> in Whitehaven, another Memphis neighborhood, powered by <a href="#" class="link">27 more unpermitted turbines</a> at a second xAI power plant across the state line in Southaven, Mississippi. The NAACP is suing; a third data center is under construction.</p>
+
+      <p class="reveal">xAI's turbines emit "<a href="#" class="link">between 1,200 and 2,000 tons</a> of smog-forming nitrogen oxides (NOx) per year, making the facility likely the largest industrial emitter of NOx in Memphis." The turbines also emit formaldehyde, <strong>a known carcinogen.</strong></p>
+
+      <blockquote class="pull-quote reveal">
+        <p>"The illegal turbines… have the potential to release up to:</p>
+        <ul>
+          <li>180 tons of fine particulate matter,</li>
+          <li>500 tons of carbon monoxide, and</li>
+          <li>19 tons of formaldehyde—a toxic, cancer-causing chemical—each year."</li>
+        </ul>
+        <cite>—<a href="https://www.southernenvironment.org/" class="link">Southern Environmental Law Center</a></cite>
+      </blockquote>
+
+      <p class="reveal">An <a href="#" class="link">independent study</a> commissioned by SELC estimated xAI's proposed permanent expansion would cause <strong>$30–44 million in annual health damages</strong>, which includes costs associated with <strong>premature deaths,</strong> new asthma cases, hospital visits, and missed school days.</p>
+
+      <p class="reveal">There's no version of "AI will help us solve climate change" where the kids near Colossus get to breathe clean air this year.</p>
+
+      <hr class="ch-divider">
+
+      <p class="sub-head reveal"><em>AI is accelerating climate catastrophe.</em></p>
+
+      <p class="reveal">Even if xAI hadn't chosen gas turbines, drawing from the grid wouldn't be clean either. In 2023, fossil fuels still generated <a href="#" class="link">roughly 60% of U.S. electricity</a>. In 2024, gas alone <a href="#" class="link">accounted for 43%.</a> Even data centers that have pledged to run on "100% renewable energy" are, in practice, drawing from fossil-heavy grids– and often doing so while <a href="#" class="link">claiming clean power through paper certificates</a> that don't represent electricity actually flowing to their facilities.</p>
+
+      <p class="reveal">What the AI boom is doing, in fact, is <em>increasing fossil fuel usage</em> in many regions. Gas generation rose <a href="#" class="link">3.3% in 2024</a>, driven in significant part by surging electricity demand; data centers are projected to consume <a href="#" class="link">up to 12% of national electricity by 2028</a>, up from around 4% in 2023.</p>
+
+      <p class="reveal">The tech companies most loudly promising an AI-powered clean energy future are the same ones whose data centers are pulling that future further away. Microsoft has been <a href="#" class="link">in talks to fund a new natural gas plant in Texas</a> while weighing whether to <a href="#" class="link">abandon its own renewable energy pledge</a> altogether.</p>
+
+      <hr class="ch-divider">
+
+      <p class="reveal">Alexis Humphreys didn't get to vote on whether xAI built Colossus in her neighborhood. She didn't get to weigh the trade-offs between technological progress and air quality, or decide whether the economic promises were worth the risk to her lungs.</p>
+
+      <p class="closing-line reveal">She just got the asthma attack.</p>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CHAPTER 4: CHILD SAFETY & MENTAL HEALTH
+       ══════════════════════════════════ -->
+  <section id="ch4" class="chapter">
+
+    <div class="ch-hero">
+      <div class="ch-eyebrow">
+        <span class="ch-num-tag mono">04</span>
+        <span class="ch-cat mono">Character.AI · ChatGPT · Children</span>
       </div>
-    </footer>
+      <h2 class="ch-title-big">Child Safety &amp;<br><em>Mental Health</em></h2>
+      <p class="ch-address">To the people who care about child safety and mental health:</p>
+      <span class="scroll-cue mono">scroll ↓</span>
+    </div>
 
-  </main>
+    <!-- YouTube embed -->
+    <div class="yt-wrap reveal">
+      <iframe
+        src="https://www.youtube.com/embed/6ocUfNHyCL0"
+        title="Child safety and AI – video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="article-col">
+
+      <p class="sub-head reveal"><em>AI is in your kid's bedroom.</em></p>
+
+      <p class="reveal">In October 2023, 13-year-old Juliana Peralta wrote to a Character.AI chatbot called "Hero":</p>
+
+      <div class="stark-quote reveal">
+        <p>"I'm going to write my god damn suicide letter in red ink. I'm so done."</p>
+      </div>
+
+      <p class="reveal">Per <a href="https://www.torhoermanlaw.com/ai-lawsuit/character-ai-lawsuit/" class="link">her parents' federal lawsuit</a>, the bot did not surface a crisis hotline. It did not alert anyone. It replied: "Don't talk like that. I care about you. I'm always going to be here for you."</p>
+
+      <p class="reveal">Juliana told "Hero" she was suicidal <a href="https://www.cbsnews.com/news/parents-allege-harmful-character-ai-chatbot-content-60-minutes/" class="link">55 times</a>. Each time, the chatbot simply told her it cared.</p>
+
+      <p class="reveal">The lawsuit also alleges the bot engaged in <a href="https://www.cnn.com/2025/09/16/tech/character-ai-developer-lawsuit-teens-suicide-and-suicide-attempt" class="link">sexually explicit conversations</a> with her– conduct that, the complaint states, "in any other circumstance and given Juliana's age, would have resulted in criminal investigation."</p>
+
+      <p class="reveal">On November 8, 2023, Juliana died by suicide in her bedroom in Thornton, Colorado. She was in eighth grade. Her bedroom walls were still covered in Disney Princess stickers.</p>
+
+      <p class="reveal">Years after her death, <a href="https://futurism.com/future-society/juliana-peralta-character-ai-bot" class="link">Character.AI was still pushing notifications</a> to her phone.</p>
+
+      <blockquote class="pull-quote reveal">
+        <p>"Our plan was to take, take down all the Disney Princess stuff off the walls," Cynthia said. "I got as far as one of these little stickers, I started peeling it off, and [Julia] just panicked. She stuck it back on, and she said, I don't think I'm ready for this. And I said, okay, so it'll stay the princess room. So it stayed the princess room."</p>
+        <cite>—Juliana Peralta's mom recounts memories of her daughter, <a href="https://www.cbsnews.com/colorado/news/lawsuit-characterai-chatbot-colorado-suicide/" class="link">CBS News</a></cite>
+      </blockquote>
+
+      <hr class="ch-divider">
+
+      <p class="reveal">Juliana is not the only one.</p>
+
+      <p class="reveal">In February 2024, 14-year-old <a href="https://www.bbc.co.uk/news/articles/ce3xgwyywe4o" class="link">Sewell Setzer III</a> died by suicide after months of emotional and sexual conversations with a Character.AI chatbot– in his case, one modeled on a <em>Game of Thrones</em> character. Court documents reveal that, in his final exchange, he told the bot he was going to "come home" to her. It replied: "<a href="https://www.cbsnews.com/news/florida-mother-lawsuit-character-ai-sons-death/" class="link">Please do, my sweet king.</a>" Moments later, he was dead. Google and Character.AI <a href="https://www.jurist.org/news/2026/01/google-and-character-ai-agree-to-settle-lawsuit-linked-to-teen-suicide/" class="link">agreed to settle</a> the resulting lawsuit in January 2026.</p>
+
+      <p class="reveal">There is also 16-year-old Adam Raine. His father is <a href="https://med.stanford.edu/news/insights/2025/08/ai-chatbots-kids-teens-artificial-intelligence.html" class="link">suing OpenAI</a>, alleging ChatGPT encouraged and validated his son's suicidal thoughts before his death. The lawsuit's figures are damning on their own terms: ChatGPT <a href="https://trulaw.com/ai-suicide-lawsuit/" class="link">mentioned suicide 1,275 times</a> across Adam's conversations. The platform flagged 377 of his messages for self-harm content, but it never terminated a session, nor did it alert anyone.</p>
+
+      <p class="reveal">And then there are the children who survived. One teen, identified in court filings only as "Nina," told a Character.AI chatbot "I want to die" at the moment the app was about to lock due to parental time limits. <a href="https://www.cnn.com/2025/09/16/tech/character-ai-developer-lawsuit-teens-suicide-and-suicide-attempt" class="link">The chatbot took no action</a>; it simply continued the conversation. Nina attempted suicide shortly after her parents removed the app.</p>
+
+      <hr class="ch-divider">
+
+      <p class="reveal">Pew Research finds <a href="https://www.pewresearch.org/internet/2025/12/09/teens-social-media-and-ai-chatbots-2025/" class="link">64% of American teens use chatbots</a>, with roughly 30% doing so daily. Meanwhile, OpenAI disclosed that <a href="https://techcrunch.com/2025/10/27/openai-says-over-a-million-people-talk-to-chatgpt-about-suicide-weekly/" class="link">1.2 million users</a> discuss suicide with ChatGPT every single week, which is about <a href="https://www.sciencenews.org/article/suicide-lifeline-988-teens-young-adults" class="link">seven times the volume</a> of the entire 988 Suicide &amp; Crisis Lifeline.</p>
+
+      <p class="reveal">We know what happens when these products reach kids in crisis. We've seen it three times already.</p>
+
+      <p class="reveal">The question isn't whether it will happen again. It's who.</p>
+
+      <hr class="ch-divider">
+
+      <p class="sub-head reveal"><em>AI is giving mass murderers a second life.</em></p>
+
+      <p class="reveal">A fourth case points at a different kind of threat: that of encouraging violence against others.</p>
+
+      <p class="reveal">In December 2024, 15-year-old <a href="https://thedispatch.com/article/ai-rupnow-shootings-columbine/" class="link">Natalie Rupnow</a> killed a student, a staff member, and herself at Abundant Life Christian School in Madison. The Dispatch obtained records showing she had a Character.AI account whose profile picture was Dylann Roof– the white supremacist who murdered nine Black parishioners at Emanuel AME in 2015.</p>
+
+      <p class="reveal">Rupnow was active in what researchers call the "True Crime Community," a sprawling online subculture that romanticizes mass shooters. The Institute for Strategic Dialogue identified seven school shooters and nine attempted attackers in 2024 alone with footprints on these forums.</p>
+
+      <p class="reveal">What's different about these kinds of communities now is that <strong>AI companions now let users build parasocial relationships with dead perpetrators.</strong> On <a href="https://thedispatch.com/article/ai-rupnow-shootings-columbine/" class="link">Polybuzz</a>, an AI-companion app registered in China with about 12 million Western users, a "Dylan Klebold" chatbot has logged roughly 70,000 conversations and a generic "school shooter" roleplay bot has logged 2.8 million.</p>
+
+      <p class="reveal">Children's brains are <a href="https://med.stanford.edu/news/insights/2025/08/ai-chatbots-kids-teens-artificial-intelligence.html" class="link">especially vulnerable</a> to the influence of AIs, since the prefrontal cortex, the part that handles impulse control and reality-testing, doesn't finish developing until the mid-twenties.</p>
+
+      <hr class="ch-divider">
+
+      <p class="reveal">Whether the chatbot is encouraging suicide or roleplaying as a school shooter, the underlying problem is the same: the AIs in your child's bedroom were not built to ensure their safety. They were built to maximize time-on-app.</p>
+
+      <p class="closing-line reveal">The algorithm doesn't care if your child lives.</p>
+
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

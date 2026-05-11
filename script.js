@@ -1,181 +1,208 @@
 /* ═══════════════════════════════════════════════
-   MACHINE-GENERATED — script.js
+   WAKE UP, AMERICA — script.js
    ═══════════════════════════════════════════════ */
 
 // ─── TERMINAL INTRO ────────────────────────────
 
-const TERMINAL_LINES = [
-  { text: "MAVEN SMART SYSTEM — OPERATIONAL LOG", cls: "" },
-  { text: "────────────────────────────────────────────", cls: "dim" },
-  { text: "DATE:       28 FEB", cls: "" },
-  { text: "OPERATION:  IRAN STRIKE", cls: "" },
-  { text: "SOURCE:     DoD INTELLIGENCE PACKAGE", cls: "dim" },
-  { text: "", cls: "blank" },
-  { text: "[OK]  Claude AI — intelligence processing complete", cls: "" },
-  { text: "[OK]  Coordinate generation... complete", cls: "" },
-  { text: "[OK]  Strategic importance ranking... complete", cls: "" },
-  { text: "[OK]  Auto-generating legal justifications... complete", cls: "" },
-  { text: "", cls: "blank" },
-  { text: "[??]  Civilian harm assessment.......... RUNNING", cls: "warn" },
-  { text: "[!!]  Civilian harm assessment.......... TIMEOUT", cls: "warn" },
-  { text: "      Human oversight failed to keep up.", cls: "warn" },
-  { text: "", cls: "blank" },
-  { text: "TARGET:     SHAJAREH TAYYEBEH ELEMENTARY SCHOOL", cls: "white" },
-  { text: "LOCATION:   MINAB, IRAN", cls: "white" },
-  { text: "CLASS:      STRATEGICALLY IMPORTANT", cls: "white" },
-  { text: "CIVILIAN:   NOT FLAGGED", cls: "warn" },
-  { text: "AUTH:       ██ APPROVED", cls: "err" },
-  { text: "", cls: "blank" },
-  { text: "> 1,000+ TARGETS STRUCK IN 24 HOURS.", cls: "dim" },
-  { text: "> MAVEN SMART SYSTEM — JOB COMPLETE.", cls: "dim" },
+const LINES = [
+  { t: "WAKE UP, AMERICA — AI CRISIS REPORT", c: "" },
+  { t: "────────────────────────────────────────────", c: "dim" },
+  { t: "", c: "" },
+  { t: "[01] CRIMES AGAINST HUMANITY", c: "hi" },
+  { t: "     > 175 schoolchildren killed by AI-generated strike coordinates.", c: "dim" },
+  { t: "     > Human oversight failed to keep up.", c: "dim" },
+  { t: "", c: "" },
+  { t: "[02] PRIVACY & DEMOCRACY", c: "hi" },
+  { t: "     > 80,000 cameras feeding data to federal immigration enforcement.", c: "dim" },
+  { t: "     > AI deepfakes swinging elections in Slovakia and New Hampshire.", c: "dim" },
+  { t: "", c: "" },
+  { t: "[03] CLEAN AIR & CLIMATE", c: "hi" },
+  { t: "     > 25 illegal turbines powering the world's largest AI supercomputer.", c: "dim" },
+  { t: "     > Data centers on track to consume 12% of national electricity by 2028.", c: "dim" },
+  { t: "", c: "" },
+  { t: "[04] CHILD SAFETY & MENTAL HEALTH", c: "hi" },
+  { t: "     > A 13-year-old told an AI she was suicidal 55 times.", c: "dim" },
+  { t: "     > Each time, it told her it cared.", c: "dim" },
+  { t: "", c: "" },
+  { t: "LOADING FULL REPORT...", c: "warn" },
 ];
 
-const CHAR_SPEED   = { default: 28, fast: 14, slow: 48 };
-const LINE_PAUSE   = { blank: 100, warn: 240, err: 500, white: 120, default: 60 };
-const END_HOLD     = 2200;
+const SPEED = { default: 22, dim: 12, hi: 30, warn: 40 };
+const PAUSE = { end: 1600, warn: 500, hi: 120, default: 60, blank: 80 };
 
-let lineIdx   = 0;
-let charIdx   = 0;
-let lineEl    = null;
-let skipFlag  = false;
-let termOut;
+let lIdx = 0, cIdx = 0, lEl = null, skip = false;
+let tOut;
 
 function typeChar() {
-  if (skipFlag) { revealArticle(); return; }
-  if (lineIdx >= TERMINAL_LINES.length) { setTimeout(revealArticle, END_HOLD); return; }
+  if (skip) { reveal(); return; }
+  if (lIdx >= LINES.length) { setTimeout(reveal, PAUSE.end); return; }
 
-  const line = TERMINAL_LINES[lineIdx];
+  const line = LINES[lIdx];
 
-  if (charIdx === 0) {
-    lineEl = document.createElement('span');
-    lineEl.className = `t-line ${line.cls}`;
-    termOut.appendChild(lineEl);
+  if (cIdx === 0) {
+    lEl = document.createElement('span');
+    lEl.className = `tl ${line.c}`;
+    tOut.appendChild(lEl);
   }
 
-  if (charIdx < line.text.length) {
-    lineEl.textContent += line.text[charIdx];
-    charIdx++;
-    const speed = line.cls === 'dim'
-      ? CHAR_SPEED.fast
-      : line.text.length > 44 ? CHAR_SPEED.fast : CHAR_SPEED.default;
-    setTimeout(typeChar, speed + Math.random() * 12);
+  if (cIdx < line.t.length) {
+    lEl.textContent += line.t[cIdx++];
+    const speed = SPEED[line.c] || SPEED.default;
+    setTimeout(typeChar, speed + Math.random() * 10);
   } else {
-    lineIdx++;
-    charIdx = 0;
-    const pause = line.cls === 'blank' ? LINE_PAUSE.blank
-      : line.cls === 'err'  ? LINE_PAUSE.err
-      : line.cls === 'warn' ? LINE_PAUSE.warn
-      : line.cls === 'white'? LINE_PAUSE.white
-      : LINE_PAUSE.default;
-    termOut.scrollTop = termOut.scrollHeight;
+    lIdx++; cIdx = 0;
+    const pause = !line.t ? PAUSE.blank
+      : line.c === 'warn' ? PAUSE.warn
+      : line.c === 'hi'   ? PAUSE.hi
+      : PAUSE.default;
+    tOut.scrollTop = tOut.scrollHeight;
     setTimeout(typeChar, pause);
   }
 }
 
-function revealArticle() {
-  const overlay = document.getElementById('terminal-overlay');
-  overlay.classList.add('fade-out');
-  const article = document.getElementById('article');
-  article.classList.remove('hidden');
-  setTimeout(() => { overlay.style.display = 'none'; }, 1100);
+function reveal() {
+  document.getElementById('terminal-overlay').classList.add('fade-out');
+  const main = document.getElementById('main');
+  main.classList.add('visible');
+  setTimeout(() => {
+    document.getElementById('terminal-overlay').style.display = 'none';
+  }, 1100);
 }
 
-// ─── SCROLL PROGRESS BAR ───────────────────────
+// ─── PROGRESS BAR ──────────────────────────────
 
-function initProgressBar() {
+function initProgress() {
   const bar = document.getElementById('progress-bar');
   window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const total    = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = total > 0 ? (window.scrollY / total * 100) + '%' : '0%';
   }, { passive: true });
 }
 
-// ─── REVEAL ON SCROLL ──────────────────────────
+// ─── CHAPTER TRACKING ──────────────────────────
+
+const CHAPTER_COLORS = {
+  ch1: '#c41e3a',
+  ch2: '#1a7bc4',
+  ch3: '#2d9e4f',
+  ch4: '#c49a1a',
+};
+
+function initChapterTracking() {
+  const chapters = document.querySelectorAll('.chapter');
+  const navItems = document.querySelectorAll('.sb-item');
+  const bar = document.getElementById('progress-bar');
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const color = CHAPTER_COLORS[id] || '#888';
+
+        // Update nav active state
+        navItems.forEach(item => {
+          const isActive = item.dataset.target === id;
+          item.classList.toggle('active', isActive);
+        });
+
+        // Update sidebar active color and progress bar
+        document.getElementById('sidebar').style.setProperty('--sb-active-ch', color);
+        bar.style.setProperty('--pb-col', color);
+        bar.style.background = color;
+        bar.style.boxShadow = `0 0 8px ${color}`;
+      }
+    });
+  }, { threshold: 0.25, rootMargin: '-10% 0px -60% 0px' });
+
+  chapters.forEach(ch => obs.observe(ch));
+
+  // Nav click → smooth scroll
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const target = document.getElementById(item.dataset.target);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        // Close mobile sidebar
+        document.getElementById('sidebar').classList.remove('open');
+      }
+    });
+  });
+}
+
+// ─── SCROLL REVEAL ─────────────────────────────
 
 function initReveal() {
-  const els = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
+  const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
-  els.forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 }
 
-// ─── NUMBER COUNTERS ───────────────────────────
+// ─── MOBILE SIDEBAR ────────────────────────────
 
-function easeOutCubic(t) {
-  return 1 - Math.pow(1 - t, 3);
+function initMobile() {
+  const btn = document.getElementById('menu-btn');
+  const sb  = document.getElementById('sidebar');
+
+  btn.addEventListener('click', () => sb.classList.toggle('open'));
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (sb.classList.contains('open') && !sb.contains(e.target) && e.target !== btn) {
+      sb.classList.remove('open');
+    }
+  });
 }
 
-function animateCount(el, target, duration) {
-  const start = performance.now();
-  function tick(now) {
-    const elapsed  = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const value    = Math.round(easeOutCubic(progress) * target);
-    el.textContent = value.toLocaleString();
-    if (progress < 1) requestAnimationFrame(tick);
-    else el.textContent = target.toLocaleString();
-  }
-  requestAnimationFrame(tick);
-}
+// ─── KEYBOARD SHORTCUTS ────────────────────────
 
-function initCounters() {
-  const els = document.querySelectorAll('[data-target]');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.dataset.counted) {
-        entry.target.dataset.counted = 'true';
-        animateCount(entry.target, parseInt(entry.target.dataset.target, 10), 1600);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-
-  els.forEach(el => observer.observe(el));
-}
-
-// ─── HERO PARALLAX (subtle) ────────────────────
-
-function initParallax() {
-  const headline = document.querySelector('.headline');
-  if (!headline || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    headline.style.transform = `translateY(${y * 0.12}px)`;
-  }, { passive: true });
+function initKeyboard() {
+  document.addEventListener('keydown', (e) => {
+    // Skip terminal
+    if (!skip && (e.key === 'Escape' || e.key === ' ')) {
+      e.preventDefault();
+      skip = true;
+      reveal();
+      return;
+    }
+    // Chapter navigation with arrow keys
+    const chapters = ['ch1', 'ch2', 'ch3', 'ch4'];
+    const active = document.querySelector('.sb-item.active');
+    if (!active) return;
+    const idx = chapters.indexOf(active.dataset.target);
+    if (e.key === 'ArrowDown' && idx < chapters.length - 1) {
+      document.getElementById(chapters[idx + 1]).scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowUp' && idx > 0) {
+      document.getElementById(chapters[idx - 1]).scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 }
 
 // ─── INIT ──────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
-  termOut = document.getElementById('terminal-output');
+  tOut = document.getElementById('t-out');
 
-  document.getElementById('skip-intro').addEventListener('click', () => {
-    skipFlag = true;
-    revealArticle();
+  document.getElementById('skip-btn').addEventListener('click', () => {
+    skip = true;
+    reveal();
   });
 
-  // Keyboard skip (Escape or Space)
-  document.addEventListener('keydown', (e) => {
-    if (!skipFlag && (e.key === 'Escape' || e.key === ' ')) {
-      e.preventDefault();
-      skipFlag = true;
-      revealArticle();
-    }
-  });
+  setTimeout(typeChar, 700);
 
-  setTimeout(typeChar, 800);
-
-  initProgressBar();
+  initProgress();
+  initChapterTracking();
   initReveal();
-  initCounters();
-  initParallax();
+  initMobile();
+  initKeyboard();
+
+  // Set initial sidebar color
+  document.getElementById('sidebar').style.setProperty('--sb-active-ch', '#c41e3a');
 });
