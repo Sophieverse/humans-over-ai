@@ -407,9 +407,9 @@ body {
   padding: 8px 0 8px 28px;
 }
 .pull-quote p {
-  font-family: var(--display);
+  font-family: var(--serif);
   font-size: clamp(17px,2.2vw,22px);
-  font-style: italic; line-height: 1.6;
+  font-style: normal; font-weight: 700; line-height: 1.6;
   color: var(--text); margin-bottom: 14px;
 }
 .pull-quote cite {
