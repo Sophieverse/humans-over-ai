@@ -27,8 +27,8 @@ const LINES = [
   { t: "LOADING FULL REPORT...", c: "warn" },
 ];
 
-const SPEED = { default: 12, dim: 7, hi: 14, warn: 18 };
-const PAUSE = { end: 3000, warn: 200, hi: 55, default: 28, blank: 36 };
+const SPEED = { default: 22, dim: 12, hi: 26, warn: 32 };
+const PAUSE = { end: 5000, warn: 260, hi: 70, default: 38, blank: 50 };
 
 let lIdx = 0, cIdx = 0, lEl = null, skip = false;
 let tOut;
