@@ -165,10 +165,6 @@ body {
 .sb-brand {
   padding: 32px 24px 24px;
   border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 14px;
-}
-.sb-logo {
-  width: 48px; height: 48px; flex-shrink: 0;
 }
 .sb-pub {
   font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em;
