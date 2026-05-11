@@ -14,6 +14,21 @@
 </head>
 <body>
 
+<!-- ─── TERMINAL OVERLAY ─── -->
+<div id="terminal-overlay">
+  <div class="t-window">
+    <div class="t-bar">
+      <span class="t-dot r"></span>
+      <span class="t-dot y"></span>
+      <span class="t-dot g"></span>
+      <span class="t-name">WAKE UP, AMERICA — AI CRISIS REPORT</span>
+    </div>
+    <div id="t-out"></div>
+    <span id="t-cur" class="blink">▌</span>
+  </div>
+  <button id="skip-btn">skip intro →</button>
+</div>
+
 <!-- ─── SIDEBAR ─── -->
 <nav id="sidebar" aria-label="Chapter navigation">
   <div class="sb-brand">
@@ -21,21 +36,42 @@
     <span class="sb-title">Wake Up,<br>America</span>
   </div>
   <ul class="sb-nav">
-    <li class="sb-item active" data-target="ch1" style="--item-col:#c41e3a">
-      <span class="sb-num">01</span>
-      <span class="sb-label">Crimes Against<br>Humanity</span>
+    <li class="sb-chapter">
+      <div class="sb-item active" data-target="ch1" style="--item-col:#c41e3a">
+        <span class="sb-num">01</span>
+        <span class="sb-label">Crimes Against<br>Humanity</span>
+      </div>
     </li>
-    <li class="sb-item" data-target="ch2" style="--item-col:#1a7bc4">
-      <span class="sb-num">02</span>
-      <span class="sb-label">Privacy &<br>Democracy</span>
+    <li class="sb-chapter">
+      <div class="sb-item" data-target="ch2" style="--item-col:#1a7bc4">
+        <span class="sb-num">02</span>
+        <span class="sb-label">Privacy &amp;<br>Democracy</span>
+      </div>
+      <ul class="sb-sub">
+        <li class="sb-sub-item" data-target="sh-track">tracking your every move</li>
+        <li class="sb-sub-item" data-target="sh-ice">ICE &amp; surveillance</li>
+        <li class="sb-sub-item" data-target="sh-disinfo">mass disinformation</li>
+      </ul>
     </li>
-    <li class="sb-item" data-target="ch3" style="--item-col:#2d9e4f">
-      <span class="sb-num">03</span>
-      <span class="sb-label">Clean Air<br>&amp; Climate</span>
+    <li class="sb-chapter">
+      <div class="sb-item" data-target="ch3" style="--item-col:#2d9e4f">
+        <span class="sb-num">03</span>
+        <span class="sb-label">Clean Air<br>&amp; Climate</span>
+      </div>
+      <ul class="sb-sub">
+        <li class="sb-sub-item" data-target="sh-air">poisoning the air</li>
+        <li class="sb-sub-item" data-target="sh-climate">climate catastrophe</li>
+      </ul>
     </li>
-    <li class="sb-item" data-target="ch4" style="--item-col:#c49a1a">
-      <span class="sb-num">04</span>
-      <span class="sb-label">Child Safety &amp;<br>Mental Health</span>
+    <li class="sb-chapter">
+      <div class="sb-item" data-target="ch4" style="--item-col:#c49a1a">
+        <span class="sb-num">04</span>
+        <span class="sb-label">Child Safety &amp;<br>Mental Health</span>
+      </div>
+      <ul class="sb-sub">
+        <li class="sb-sub-item" data-target="sh-bedroom">in your kid's bedroom</li>
+        <li class="sb-sub-item" data-target="sh-shooters">giving murderers a second life</li>
+      </ul>
     </li>
   </ul>
 </nav>
@@ -50,42 +86,6 @@
      MAIN CONTENT
      ═══════════════════════════════════════════════ -->
 <main id="main">
-
-  <!-- ══════════════════════════════════
-       INTRO TERMINAL
-       ══════════════════════════════════ -->
-  <section id="intro" class="intro-section">
-    <div class="it-window">
-      <div class="it-bar">
-        <span class="it-dot r"></span>
-        <span class="it-dot y"></span>
-        <span class="it-dot g"></span>
-        <span class="it-name">WAKE UP, AMERICA — AI CRISIS REPORT</span>
-      </div>
-      <div class="it-body">
-        <span class="it-line it-hi">WAKE UP, AMERICA — AI CRISIS REPORT</span>
-        <span class="it-line it-dim">────────────────────────────────────────────</span>
-        <span class="it-line">&nbsp;</span>
-        <span class="it-line it-hi">[01] CRIMES AGAINST HUMANITY</span>
-        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; 175 schoolchildren killed by AI-generated strike coordinates.</span>
-        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; Human oversight failed to keep up.</span>
-        <span class="it-line">&nbsp;</span>
-        <span class="it-line it-hi">[02] PRIVACY &amp; DEMOCRACY</span>
-        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; 80,000 cameras feeding data to federal immigration enforcement.</span>
-        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; AI deepfakes influencing elections in Slovakia and New Hampshire.</span>
-        <span class="it-line">&nbsp;</span>
-        <span class="it-line it-hi">[03] CLEAN AIR &amp; CLIMATE</span>
-        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; 25 illegal turbines powering the world's largest AI supercomputer.</span>
-        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; Data centers on track to consume 12% of national electricity by 2028.</span>
-        <span class="it-line">&nbsp;</span>
-        <span class="it-line it-hi">[04] CHILD SAFETY &amp; MENTAL HEALTH</span>
-        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; A 13-year-old told an AI she was suicidal 55 times.</span>
-        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; Each time, it told her it cared.</span>
-        <span class="it-line">&nbsp;</span>
-        <span class="it-line it-warn">SCROLL TO BEGIN ↓</span>
-      </div>
-    </div>
-  </section>
 
   <!-- ══════════════════════════════════
        CHAPTER 1: CRIMES AGAINST HUMANITY
@@ -205,7 +205,7 @@
 
     <div class="article-col">
 
-      <p class="sub-head reveal"><em>AI is being used to track your every move.</em></p>
+      <p class="sub-head reveal" id="sh-track"><em>AI is being used to track your every move.</em></p>
 
       <p class="reveal">Flock Safety is a private company that deploys many of the license plate tracking cameras in the United States. These cameras are known as "automated license plate readers (ALPR)" and typically capture 6-12 photos of every vehicle that passes by. They "use a combination of AI and machine learning to record data such as license plate numbers and a car's color, make, and model, along with extras like bumper stickers, body damage, roof racks, and temporary paper tags."</p>
 
@@ -220,7 +220,7 @@
 
       <hr class="ch-divider">
 
-      <p class="sub-head reveal"><em>AI is being used to help ICE <a href="https://action.aclu.org/send-message/ice-stop-terrorizing-children" target="_blank" rel="noopener" class="link">terrorize children</a> and <a href="https://calmatters.org/california-divide/2025/07/ice-targets-immigrants-church-grounds/" target="_blank" rel="noopener" class="link">raid churches</a>.</em></p>
+      <p class="sub-head reveal" id="sh-ice"><em>AI is being used to help ICE <a href="https://action.aclu.org/send-message/ice-stop-terrorizing-children" target="_blank" rel="noopener" class="link">terrorize children</a> and <a href="https://calmatters.org/california-divide/2025/07/ice-targets-immigrants-church-grounds/" target="_blank" rel="noopener" class="link">raid churches</a>.</em></p>
 
       <p class="reveal">Even setting aside misconfigurations, the surveillance pipeline runs in directions Flock claims to control but doesn't. In May 2025, <a href="https://www.404media.co/ice-taps-into-nationwide-ai-enabled-camera-network-data-shows/" target="_blank" rel="noopener" class="link">404 Media obtained data</a> showing local police had performed more than 4,000 Flock lookups on behalf of ICE despite no contract between the two– giving federal immigration enforcement "side-door access" to a nationwide camera network.</p>
 
@@ -253,7 +253,7 @@
 
       <hr class="ch-divider">
 
-      <p class="sub-head reveal"><em>AI is being used to spread mass disinformation.</em></p>
+      <p class="sub-head reveal" id="sh-disinfo"><em>AI is being used to spread mass disinformation.</em></p>
 
       <p class="reveal">Two days before Slovakia's 2023 parliamentary election, an audio clip went viral on Facebook. The voices were unmistakable: <a href="https://www.unesco.org/mil4teachers/en/toolkit-media/indicator-5/activities/ai-disinformation/case-study-2" target="_blank" rel="noopener" class="link">Michal Šimečka</a>, leader of the pro-European Progressive Slovakia party, and journalist Monika Tódová from Denník N, discussing <a href="https://misinforeview.hks.harvard.edu/article/beyond-the-deepfake-hype-ai-democracy-and-the-slovak-case/" target="_blank" rel="noopener" class="link">how to rig the vote</a> by buying ballots from the country's Roma minority.</p>
 
@@ -286,7 +286,7 @@
 
     <div class="article-col">
 
-      <p class="sub-head reveal"><em>AI is poisoning the air we breathe.</em></p>
+      <p class="sub-head reveal" id="sh-air"><em>AI is poisoning the air we breathe.</em></p>
 
       <p class="reveal">It's July 2025, and Alexis Humphreys can't breathe.</p>
 
@@ -314,7 +314,7 @@
 
       <hr class="ch-divider">
 
-      <p class="sub-head reveal"><em>AI is accelerating climate catastrophe.</em></p>
+      <p class="sub-head reveal" id="sh-climate"><em>AI is accelerating climate catastrophe.</em></p>
 
       <p class="reveal">Even if xAI hadn't chosen gas turbines, drawing from the grid wouldn't be clean either. In 2023, fossil fuels still generated <a href="https://www.eia.gov/tools/faqs/faq.php?id=427&t=3" target="_blank" rel="noopener" class="link">roughly 60% of U.S. electricity</a>. In 2024, gas alone <a href="https://ember-energy.org/latest-insights/us-electricity-2025-special-report/2024-in-review/" target="_blank" rel="noopener" class="link">accounted for 43%.</a> Even data centers that have pledged to run on "100% renewable energy" are, in practice, drawing from fossil-heavy grids– and often doing so while <a href="https://www.reccessary.com/en/news/how-ai-tech-giants-hide-dirty-energy-source" target="_blank" rel="noopener" class="link">claiming clean power through paper certificates</a> that don't represent electricity actually flowing to their facilities.</p>
 
@@ -355,7 +355,7 @@
 
     <div class="article-col">
 
-      <p class="sub-head reveal"><em>AI is in your kid's bedroom.</em></p>
+      <p class="sub-head reveal" id="sh-bedroom"><em>AI is in your kid's bedroom.</em></p>
 
       <p class="reveal">In October 2023, 13-year-old Juliana Peralta wrote to a Character.AI chatbot called "Hero":</p>
 
@@ -398,7 +398,7 @@
 
       <hr class="ch-divider">
 
-      <p class="sub-head reveal"><em>AI is giving mass murderers a second life.</em></p>
+      <p class="sub-head reveal" id="sh-shooters"><em>AI is giving mass murderers a second life.</em></p>
 
       <p class="reveal">A fourth case points at a different kind of threat: that of encouraging violence against others.</p>
 
