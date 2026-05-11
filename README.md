@@ -1,8 +1,8 @@
-# Machine-Generated
+# Humans over AI
 
 An interactive investigative journalism piece about AI-assisted military targeting, the Minab school strike, and the systematic dismantling of civilian harm oversight.
 
-**[→ View live site](https://sophieverse.github.io/machine-generated)**
+**[→ View live site](https://sophieverse.github.io/humans-over-ai)**
 
 ---
 
