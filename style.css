@@ -341,6 +341,7 @@ body {
 }
 .article-col p:last-child { margin-bottom: 0; }
 .article-col strong { color: var(--text); }
+.article-col a strong { color: inherit; }
 .article-col em { font-style: italic; }
 
 /* Drop cap */
