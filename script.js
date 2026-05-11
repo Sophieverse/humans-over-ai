@@ -128,6 +128,21 @@ function initChapterTracking() {
   });
 }
 
+// ─── TITLE UNDERLINES ──────────────────────────
+
+function initTitleUnderlines() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('underline-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.ch-title-big').forEach(el => obs.observe(el));
+}
+
 // ─── SCROLL REVEAL ─────────────────────────────
 
 function initReveal() {
@@ -227,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProgress();
   initChapterTracking();
   initReveal();
+  initTitleUnderlines();
   initMobile();
   initSubNav();
   initKeyboard();

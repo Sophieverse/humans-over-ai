@@ -313,9 +313,15 @@ body {
 .ch-title-big em::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: -8px;
-  height: 3px; border-radius: 2px;
+  left: 0; right: 0; bottom: -16px;
+  height: 5px; border-radius: 3px;
   background: var(--ch);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.75s ease-out 0.25s;
+}
+.ch-title-big.underline-visible em::after {
+  transform: scaleX(1);
 }
 
 /* ════════════════════════════════════════════════
