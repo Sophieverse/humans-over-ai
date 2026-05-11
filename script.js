@@ -27,9 +27,8 @@ const LINES = [
   { t: "LOADING FULL REPORT...", c: "warn" },
 ];
 
-// ~3x faster than original
-const SPEED = { default: 8, dim: 5, hi: 10, warn: 14 };
-const PAUSE = { end: 700, warn: 180, hi: 45, default: 22, blank: 30 };
+const SPEED = { default: 12, dim: 7, hi: 14, warn: 18 };
+const PAUSE = { end: 3000, warn: 200, hi: 55, default: 28, blank: 36 };
 
 let lIdx = 0, cIdx = 0, lEl = null, skip = false;
 let tOut;
@@ -195,6 +194,23 @@ function initKeyboard() {
   });
 }
 
+// ─── THEME ─────────────────────────────────────
+
+function initTheme() {
+  const btn  = document.getElementById('theme-btn');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved) html.setAttribute('data-theme', saved);
+  btn.textContent = html.getAttribute('data-theme') === 'light' ? '☾' : '☀';
+
+  btn.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    btn.textContent = next === 'light' ? '☾' : '☀';
+  });
+}
+
 // ─── INIT ──────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -213,4 +229,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobile();
   initSubNav();
   initKeyboard();
+  initTheme();
 });
