@@ -47,7 +47,7 @@ function initChapterTracking() {
     });
     bar.style.background = color;
     bar.style.boxShadow = `0 0 8px ${color}`;
-  }, { threshold: 0.15, rootMargin: '-10% 0px -60% 0px' });
+  }, { threshold: 0, rootMargin: '-10% 0px -60% 0px' });
 
   chapters.forEach(ch => obs.observe(ch));
 
