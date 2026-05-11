@@ -193,8 +193,8 @@ body {
   transition: background .25s;
   position: relative;
 }
-.sb-item:hover { background: rgba(128,128,128,0.1); }
-.sb-item.active { background: rgba(128,128,128,0.22); }
+.sb-item:hover { background: rgba(128,128,128,0.08); }
+.sb-item.active { background: color-mix(in srgb, var(--item-col, #888) 14%, transparent); }
 
 .sb-num {
   font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
@@ -205,6 +205,20 @@ body {
   font-family: var(--serif); font-size: 0.85rem; line-height: 1.35;
   color: var(--text); font-weight: 600;
 }
+
+.sb-humanity {
+  position: relative; display: inline;
+}
+.sb-humanity::after {
+  content: '';
+  position: absolute; bottom: -1px; left: 0;
+  width: 100%; height: 2px;
+  background: var(--item-col, #888);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sb-item.active .sb-humanity::after { transform: scaleX(1); }
 
 /* ════════════════════════════════════════════════
    THEME TOGGLE
