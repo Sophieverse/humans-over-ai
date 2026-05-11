@@ -193,8 +193,8 @@ body {
   transition: background .25s;
   position: relative;
 }
-.sb-item:hover { background: rgba(128,128,128,0.06); }
-.sb-item.active { background: rgba(128,128,128,0.1); }
+.sb-item:hover { background: rgba(128,128,128,0.1); }
+.sb-item.active { background: rgba(128,128,128,0.22); }
 
 .sb-num {
   font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
