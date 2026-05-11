@@ -14,21 +14,6 @@
 </head>
 <body>
 
-<!-- ─── TERMINAL OVERLAY ─── -->
-<div id="terminal-overlay">
-  <div class="t-window">
-    <div class="t-bar">
-      <span class="t-dot r"></span>
-      <span class="t-dot y"></span>
-      <span class="t-dot g"></span>
-      <span class="t-name">WAKE UP, AMERICA — AI CRISIS REPORT</span>
-    </div>
-    <div id="t-out"></div>
-    <span id="t-cur" class="blink">▌</span>
-  </div>
-  <button id="skip-btn">skip intro →</button>
-</div>
-
 <!-- ─── SIDEBAR ─── -->
 <nav id="sidebar" aria-label="Chapter navigation">
   <div class="sb-brand">
@@ -36,28 +21,23 @@
     <span class="sb-title">Wake Up,<br>America</span>
   </div>
   <ul class="sb-nav">
-    <li class="sb-item active" data-target="ch1" data-color="#c41e3a">
+    <li class="sb-item active" data-target="ch1" style="--item-col:#c41e3a">
       <span class="sb-num">01</span>
       <span class="sb-label">Crimes Against<br>Humanity</span>
     </li>
-    <li class="sb-item" data-target="ch2" data-color="#1a7bc4">
+    <li class="sb-item" data-target="ch2" style="--item-col:#1a7bc4">
       <span class="sb-num">02</span>
       <span class="sb-label">Privacy &<br>Democracy</span>
     </li>
-    <li class="sb-item" data-target="ch3" data-color="#2d9e4f">
+    <li class="sb-item" data-target="ch3" style="--item-col:#2d9e4f">
       <span class="sb-num">03</span>
       <span class="sb-label">Clean Air<br>&amp; Climate</span>
     </li>
-    <li class="sb-item" data-target="ch4" data-color="#c49a1a">
+    <li class="sb-item" data-target="ch4" style="--item-col:#c49a1a">
       <span class="sb-num">04</span>
       <span class="sb-label">Child Safety &amp;<br>Mental Health</span>
     </li>
   </ul>
-  <div class="sb-footer mono">
-    Sources: NYT · Guardian · 404 Media ·<br>
-    Brennan Center · WNYC · Breaking Defense ·<br>
-    SELC · Pew Research · NewsGuard
-  </div>
 </nav>
 
 <!-- ─── MOBILE TOGGLE ─── -->
@@ -72,18 +52,52 @@
 <main id="main">
 
   <!-- ══════════════════════════════════
+       INTRO TERMINAL
+       ══════════════════════════════════ -->
+  <section id="intro" class="intro-section">
+    <div class="it-window">
+      <div class="it-bar">
+        <span class="it-dot r"></span>
+        <span class="it-dot y"></span>
+        <span class="it-dot g"></span>
+        <span class="it-name">WAKE UP, AMERICA — AI CRISIS REPORT</span>
+      </div>
+      <div class="it-body">
+        <span class="it-line it-hi">WAKE UP, AMERICA — AI CRISIS REPORT</span>
+        <span class="it-line it-dim">────────────────────────────────────────────</span>
+        <span class="it-line">&nbsp;</span>
+        <span class="it-line it-hi">[01] CRIMES AGAINST HUMANITY</span>
+        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; 175 schoolchildren killed by AI-generated strike coordinates.</span>
+        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; Human oversight failed to keep up.</span>
+        <span class="it-line">&nbsp;</span>
+        <span class="it-line it-hi">[02] PRIVACY &amp; DEMOCRACY</span>
+        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; 80,000 cameras feeding data to federal immigration enforcement.</span>
+        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; AI deepfakes swinging elections in Slovakia and New Hampshire.</span>
+        <span class="it-line">&nbsp;</span>
+        <span class="it-line it-hi">[03] CLEAN AIR &amp; CLIMATE</span>
+        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; 25 illegal turbines powering the world's largest AI supercomputer.</span>
+        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; Data centers on track to consume 12% of national electricity by 2028.</span>
+        <span class="it-line">&nbsp;</span>
+        <span class="it-line it-hi">[04] CHILD SAFETY &amp; MENTAL HEALTH</span>
+        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; A 13-year-old told an AI she was suicidal 55 times.</span>
+        <span class="it-line it-dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; Each time, it told her it cared.</span>
+        <span class="it-line">&nbsp;</span>
+        <span class="it-line it-warn">SCROLL TO BEGIN ↓</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
        CHAPTER 1: CRIMES AGAINST HUMANITY
        ══════════════════════════════════ -->
   <section id="ch1" class="chapter">
 
     <div class="ch-hero">
       <div class="ch-eyebrow">
-        <span class="ch-num-tag mono">01</span>
         <span class="ch-cat mono">War · AI Targeting · Civilian Harm</span>
       </div>
       <h2 class="ch-title-big">Crimes Against<br><em>Humanity</em></h2>
       <p class="ch-address">To the people who care about war, suffering, and death:</p>
-      <span class="scroll-cue mono">scroll ↓</span>
     </div>
 
     <!-- Guardian media cards -->
@@ -102,14 +116,39 @@
       </a>
     </div>
 
-    <!-- Photo -->
+    <!-- Scene photography -->
     <figure class="photo-fig reveal">
-      <div class="photo-inner">
-        <p class="photo-farsi">شهیده مظلوم فاطمه یزدان پناه و اسرا فرحی زاده</p>
-        <p class="photo-farsi">شهیدان مظلوم و بی‌گناه دبستان شجره طیبه مینب</p>
-        <p class="photo-en">Families at a memorial rally for victims of the Shajareh Tayyebeh Elementary School, Minab. The poster shows Fatima Yazdan Panah and Esra Farahi Zadeh, two of the children killed.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Shajareh_Tayyebeh_school_in_Minab_photos_from_Mehr_%283%29.jpg"
+           alt="Rescue workers and bystanders at Shajareh Tayyebeh Elementary School after the attack"
+           class="scene-photo">
+      <figcaption>Rescue workers at Shajareh Tayyebeh Elementary School, Minab, February 28, 2026 — Image: Mehr News Agency / Wikimedia Commons</figcaption>
+    </figure>
+
+    <!-- Before / after missile strike -->
+    <div class="before-after reveal">
+      <div class="ba-pair">
+        <figure class="ba-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Moments_before_Tomahawk_missile_strikes_building_adjacent_to_IRGC_compound_in_Minab.png"
+               alt="CCTV still: moments before Tomahawk missile strike, Minab"
+               class="scene-photo">
+          <span class="ba-cap">Before</span>
+        </figure>
+        <figure class="ba-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Moments_after_Tomahawk_missile_strikes_building_adjacent_to_IRGC_compound_in_Minab.png"
+               alt="CCTV still: moments after Tomahawk missile strike, Minab"
+               class="scene-photo">
+          <span class="ba-cap">After</span>
+        </figure>
       </div>
-      <figcaption>Image: <a href="https://www.theguardian.com/world/video/2026/mar/01/iran-children-killed-school-bombing-us-israel-strikes-video" target="_blank" rel="noopener" class="link">The Guardian</a></figcaption>
+      <p class="ba-caption">CCTV footage: Tomahawk missile strikes a building adjacent to the school, Minab, February 28, 2026 — Source: Wikimedia Commons</p>
+    </div>
+
+    <!-- Funeral -->
+    <figure class="photo-fig reveal">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Funeral_of_the_martyrs_of_Minab_Primary_School_for_Girls_26.jpg"
+           alt="Mourners gathered in Minab's central square with caskets of victims"
+           class="scene-photo">
+      <figcaption>Mourners with caskets of the Minab school victims, March 2026 — Image: Mehr News Agency / Wikimedia Commons</figcaption>
     </figure>
 
     <div class="article-col">
@@ -160,12 +199,10 @@
 
     <div class="ch-hero">
       <div class="ch-eyebrow">
-        <span class="ch-num-tag mono">02</span>
         <span class="ch-cat mono">Surveillance · ICE · Disinformation</span>
       </div>
       <h2 class="ch-title-big">Privacy &amp;<br><em>Democracy</em></h2>
       <p class="ch-address">To the people who care about privacy and democracy:</p>
-      <span class="scroll-cue mono">scroll ↓</span>
     </div>
 
     <div class="article-col">
@@ -244,12 +281,10 @@
 
     <div class="ch-hero">
       <div class="ch-eyebrow">
-        <span class="ch-num-tag mono">03</span>
         <span class="ch-cat mono">xAI · Emissions · Energy</span>
       </div>
       <h2 class="ch-title-big">Clean Air<br>&amp; <em>Climate</em></h2>
       <p class="ch-address">To the people who care about clean air and climate:</p>
-      <span class="scroll-cue mono">scroll ↓</span>
     </div>
 
     <div class="article-col">
@@ -306,12 +341,10 @@
 
     <div class="ch-hero">
       <div class="ch-eyebrow">
-        <span class="ch-num-tag mono">04</span>
         <span class="ch-cat mono">Character.AI · ChatGPT · Children</span>
       </div>
       <h2 class="ch-title-big">Child Safety &amp;<br><em>Mental Health</em></h2>
       <p class="ch-address">To the people who care about child safety and mental health:</p>
-      <span class="scroll-cue mono">scroll ↓</span>
     </div>
 
     <!-- YouTube embed -->
