@@ -250,10 +250,14 @@ body {
 /* ════════════════════════════════════════════════
    CHAPTER HERO
    ════════════════════════════════════════════════ */
+.chapter + .chapter {
+  border-top: 1px solid var(--ch);
+}
+
 .ch-hero {
-  min-height: 100vh;
+  min-height: 72vh;
   display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 80px clamp(24px,6vw,100px) 72px;
+  padding: 64px clamp(24px,6vw,100px) 64px;
   position: relative;
   background: radial-gradient(ellipse 90% 65% at 85% 14%, var(--ch-glow, var(--ch-dim)) 0%, transparent 62%);
 }
@@ -289,7 +293,7 @@ body {
 .article-col {
   max-width: var(--col);
   margin: 0 auto;
-  padding: 72px clamp(20px,4vw,32px);
+  padding: 52px clamp(20px,4vw,32px);
 }
 
 .article-col p {
@@ -323,7 +327,7 @@ body {
   align-items: center;
   gap: 20px;
   font-family: var(--serif);
-  font-size: clamp(18px, 2.2vw, 24px);
+  font-size: clamp(20px, 2.6vw, 30px);
   font-style: italic; font-weight: 700;
   color: var(--text);
   background: var(--ch-dim);
