@@ -139,7 +139,7 @@ function initChapterTracking() {
         setActive(item.dataset.target);
         navLockTimer = setTimeout(() => { navLocked = false; }, 1500);
 
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'instant' });
         document.getElementById('sidebar').classList.remove('open');
       }
     });
@@ -198,7 +198,7 @@ function initSubNav() {
     item.addEventListener('click', () => {
       const target = document.getElementById(item.dataset.target);
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'instant' });
         document.getElementById('sidebar').classList.remove('open');
       }
     });
