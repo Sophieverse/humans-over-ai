@@ -508,6 +508,34 @@ body {
 }
 
 /* ════════════════════════════════════════════════
+   DOCTRINE QUOTE (full-width black splash, always dark)
+   ════════════════════════════════════════════════ */
+.doctrine-quote {
+  background: #080808;
+  padding: clamp(72px, 10vw, 130px) clamp(48px, 10vw, 160px);
+  text-align: center;
+}
+.doctrine-quote q {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(26px, 4.8vw, 70px);
+  font-style: italic;
+  font-weight: 700;
+  color: #f5f1e9;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  quotes: none;
+  margin-bottom: 36px;
+}
+.doctrine-quote cite {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #6a6662;
+}
+
+/* ════════════════════════════════════════════════
    PHOTO FIGURE
    ════════════════════════════════════════════════ */
 .photo-fig {
