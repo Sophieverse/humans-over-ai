@@ -387,6 +387,8 @@ body {
   color: var(--text);
   margin: 48px 0 0;
 }
+/* closing-line directly after a splash block: no double-stacked top space */
+.doctrine-quote + .article-col .closing-line { margin-top: 24px; }
 
 /* ════════════════════════════════════════════════
    BLOCKQUOTES & PULL QUOTES
@@ -432,9 +434,13 @@ body {
 /* Stark single-line quote (for dramatic moments) */
 .stark-quote {
   background: #080808;
-  padding: clamp(64px, 8vw, 100px) clamp(48px, 8vw, 120px);
+  padding: clamp(40px, 5vw, 64px) clamp(48px, 8vw, 120px);
   text-align: center;
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
 }
+/* match space below stark-quote to space above it */
+.stark-quote + .article-col { padding-top: 56px; }
 .stark-quote p {
   font-family: var(--display);
   font-size: clamp(22px, 4vw, 54px);
