@@ -210,13 +210,6 @@ body {
 }
 .ch-title-big em { font-style: italic; color: var(--ch); }
 
-.ch-address {
-  font-family: var(--serif);
-  font-size: clamp(16px,2vw,20px);
-  font-weight: 300; line-height: 1.55;
-  color: var(--text-dim); max-width: 520px;
-  margin-bottom: 40px;
-}
 
 
 /* ════════════════════════════════════════════════
