@@ -324,7 +324,7 @@ body {
   transform: scaleX(1);
 }
 #ch1 .ch-title-big em::after,
-#ch2 .ch-title-big em::after { right: 0.54em; }
+#ch2 .ch-title-big em::after { right: 0.62em; }
 
 /* ════════════════════════════════════════════════
    ARTICLE COLUMN
