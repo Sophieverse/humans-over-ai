@@ -33,11 +33,11 @@
 
 /* ─── LIGHT MODE ───────────────────────────────── */
 [data-theme="light"] {
-  --bg:        #faf7f2;
-  --bg-s:      #f0ece6;
-  --bg-alt:    #e8e4de;
-  --surface:   #edeae4;
-  --bg-card:   #f0ece6;
+  --bg:        #ffffff;
+  --bg-s:      #f5f5f5;
+  --bg-alt:    #ebebeb;
+  --surface:   #f0f0f0;
+  --bg-card:   #f5f5f5;
 
   --text:      #1a1614;
   --text-dim:  #3c3834;
