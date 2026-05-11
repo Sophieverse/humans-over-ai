@@ -486,6 +486,40 @@ body {
 .stark-quote cite a:hover { opacity: 0.7; }
 
 /* ════════════════════════════════════════════════
+   CHAT EXCHANGE
+   ════════════════════════════════════════════════ */
+.chat-exchange {
+  margin: 36px 0;
+  border: 1px solid var(--border-s);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.chat-header {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); padding: 10px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+.chat-msg {
+  padding: 14px 18px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.chat-msg + .chat-msg { border-top: 1px solid var(--border); }
+.chat-who {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.chat-msg--user .chat-who { color: var(--ch); }
+.chat-msg--ai   .chat-who { color: var(--muted); }
+.chat-msg p {
+  font-family: var(--serif); font-size: 0.95rem;
+  color: var(--text-dim); line-height: 1.65; margin: 0;
+}
+.chat-msg em { color: var(--muted); font-style: italic; }
+
+/* ════════════════════════════════════════════════
    STAT HERO (school name + big numbers — always dark)
    ════════════════════════════════════════════════ */
 .stat-hero {
