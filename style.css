@@ -248,10 +248,24 @@ body {
 
 /* Sub-section headings */
 .sub-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   font-family: var(--serif);
-  font-size: clamp(16px,2vw,20px);
+  font-size: clamp(15px, 1.8vw, 18px);
   font-style: italic; font-weight: 700;
-  color: var(--ch); margin-bottom: 20px;
+  color: var(--ch);
+  background: var(--ch-dim);
+  padding: 16px 0;
+  margin: 52px 0 28px;
+}
+.sub-head::before,
+.sub-head::after {
+  content: '';
+  flex: 1 0 16px;
+  height: 1px;
+  background: var(--ch);
+  opacity: 0.45;
 }
 
 /* Section divider */
