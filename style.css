@@ -176,7 +176,7 @@ body {
 }
 .sb-subtitle {
   font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--muted); margin-top: 8px;
+  text-transform: uppercase; color: var(--text-dim); margin-top: 8px;
 }
 
 .sb-nav { list-style: none; padding: 16px 0; flex: 1; }
@@ -213,20 +213,22 @@ body {
   color: var(--text); font-weight: 600;
 }
 
-.sb-ul {
-  position: relative; display: inline;
-}
-.sb-ul::after {
+.sb-ul { display: inline; }
+
+.sb-item::before,
+.sb-item::after {
   content: '';
-  position: absolute; bottom: -1px; left: 0;
-  width: 100%; height: 2px;
+  position: absolute; left: 0; right: 0;
+  height: 1px;
   background: var(--item-col, #888);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.sb-ul--delay::after { transition-delay: 0.2s; }
-.sb-item.active .sb-ul::after { transform: scaleX(1); }
+.sb-item::before { top: 0; }
+.sb-item::after  { bottom: 0; transition-delay: 0.15s; }
+.sb-item.active::before,
+.sb-item.active::after { transform: scaleX(1); }
 
 /* ════════════════════════════════════════════════
    THEME TOGGLE
@@ -304,7 +306,17 @@ body {
   color: var(--text);
   margin-bottom: 36px;
 }
-.ch-title-big em { font-style: italic; color: var(--ch); }
+.ch-title-big em {
+  font-style: italic; color: var(--ch);
+  position: relative; display: inline-block;
+}
+.ch-title-big em::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -8px;
+  height: 3px; border-radius: 2px;
+  background: var(--ch);
+}
 
 /* ════════════════════════════════════════════════
    ARTICLE COLUMN
