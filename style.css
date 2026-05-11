@@ -564,6 +564,8 @@ figcaption {
   letter-spacing: .08em; color: var(--text);
   border-top: 1px solid var(--border);
 }
+figcaption a { color: var(--ch); text-decoration: none; }
+figcaption a:hover { opacity: .7; }
 
 /* Before / after comparison */
 .before-after {
