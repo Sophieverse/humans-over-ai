@@ -55,6 +55,7 @@
 #ch3 { --ch: #2d9e4f; --ch-dim: rgba(45,158,79,0.32);  --ch-glow: rgba(45,158,79,0.22); }
 #ch4 { --ch: #c49a1a; --ch-dim: rgba(196,154,26,0.32); --ch-glow: rgba(196,154,26,0.22); }
 
+[data-theme="dark"]  #ch1 { --ch: #e0284a; }
 [data-theme="light"] #ch1 { --ch-dim: rgba(196,30,58,0.18);  --ch-glow: rgba(196,30,58,0.13); }
 [data-theme="light"] #ch2 { --ch-dim: rgba(26,123,196,0.18); --ch-glow: rgba(26,123,196,0.11); }
 [data-theme="light"] #ch3 { --ch-dim: rgba(45,158,79,0.18);  --ch-glow: rgba(45,158,79,0.11); }
