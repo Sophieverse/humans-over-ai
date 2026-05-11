@@ -352,6 +352,7 @@ body {
   background: var(--ch);
   opacity: 1;
 }
+#sh-ice::before, #sh-ice::after { display: none; }
 
 /* sub-head placed directly inside .chapter (outside article-col) — no breakout offset needed */
 .chapter > .sub-head {
