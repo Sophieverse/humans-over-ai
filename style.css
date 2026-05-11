@@ -187,7 +187,7 @@ body {
 .sb-item {
   display: flex; align-items: flex-start; gap: 12px;
   padding: 14px 24px; cursor: pointer;
-  border-left: 2px solid transparent;
+  border-left: 3px solid transparent;
   transition: border-color .25s, background .25s;
   position: relative;
 }
@@ -405,6 +405,82 @@ body {
   font-family: var(--display);
   font-size: clamp(18px,2.5vw,26px);
   font-style: italic; color: var(--ch); line-height: 1.4;
+}
+
+/* ════════════════════════════════════════════════
+   STAT HERO (school name + big numbers — always dark)
+   ════════════════════════════════════════════════ */
+.stat-hero {
+  background: #0c0b0a;
+  padding: clamp(72px, 10vw, 140px) clamp(32px, 8vw, 120px);
+  text-align: center;
+  border-top: 1px solid #1e1e1e;
+  border-bottom: 1px solid #1e1e1e;
+}
+.stat-hero-eyebrow {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: #b83040; margin-bottom: 40px;
+}
+.stat-hero-title {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(48px, 7.5vw, 108px);
+  line-height: 0.95; color: #f0ece4;
+  margin-bottom: 22px;
+}
+.stat-hero-location {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #6a6662; margin-bottom: 72px;
+}
+.stat-hero-nums {
+  display: flex; align-items: center; justify-content: center;
+}
+.stat-hero-num {
+  padding: 0 clamp(36px, 6vw, 100px); text-align: center;
+}
+.stat-hero-num + .stat-hero-num { border-left: 1px solid #252525; }
+.stat-hero-big {
+  display: block; font-family: var(--display); font-weight: 900;
+  font-size: clamp(64px, 9vw, 130px); line-height: 1; margin-bottom: 10px;
+}
+.stat-hero-num:first-child .stat-hero-big { color: #c41e3a; }
+.stat-hero-num:last-child  .stat-hero-big { color: #b0aca4; }
+.stat-hero-label {
+  font-family: var(--mono); font-size: 0.52rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: #5a5652;
+}
+
+@media (max-width: 540px) {
+  .stat-hero-nums { flex-direction: column; gap: 48px; }
+  .stat-hero-num + .stat-hero-num { border-left: none; border-top: 1px solid #252525; padding-top: 40px; }
+}
+
+/* ════════════════════════════════════════════════
+   STAT CALLOUT (big number left + text right — always dark)
+   ════════════════════════════════════════════════ */
+.stat-callout {
+  background: #180507;
+  border-top: 1px solid #2a0a0e;
+  border-bottom: 1px solid #2a0a0e;
+  padding: clamp(56px, 8vw, 100px) clamp(32px, 8vw, 120px);
+  display: flex; align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+}
+.stat-callout-num {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(72px, 10vw, 152px);
+  color: #c41e3a; line-height: 1; flex-shrink: 0;
+}
+.stat-callout-text {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.8vw, 22px);
+  line-height: 1.65; color: #c8c4bc;
+}
+
+@media (max-width: 700px) {
+  .stat-callout { flex-direction: column; gap: 24px; }
+  .stat-callout-num { font-size: clamp(64px, 18vw, 100px); }
 }
 
 /* ════════════════════════════════════════════════
