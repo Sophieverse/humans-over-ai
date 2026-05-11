@@ -648,6 +648,9 @@ body {
 .article-col .photo-fig {
   margin-bottom: 2em;
 }
+.article-col .photo-fig:last-child {
+  margin-bottom: 0;
+}
 .scene-photo {
   display: block; width: 100%; height: auto;
   object-fit: cover;
