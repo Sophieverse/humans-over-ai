@@ -95,6 +95,17 @@ function initChapterTracking() {
   const CHAPTER_ORDER = ['ch1', 'ch2', 'ch3', 'ch4', 'ch5'];
   const visible = new Set();
   let dwellTimer = null;
+  let navLockTimer = null;
+  let navLocked = false;
+
+  function setActive(id) {
+    const color = CHAPTER_COLORS[id] || '#888';
+    navItems.forEach(item => {
+      item.classList.toggle('active', item.dataset.target === id);
+    });
+    bar.style.background = color;
+    bar.style.boxShadow = `0 0 8px ${color}`;
+  }
 
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -105,17 +116,12 @@ function initChapterTracking() {
       }
     });
 
+    if (navLocked) return;
+
     clearTimeout(dwellTimer);
     dwellTimer = setTimeout(() => {
       const activeId = CHAPTER_ORDER.find(id => visible.has(id));
-      if (!activeId) return;
-
-      const color = CHAPTER_COLORS[activeId] || '#888';
-      navItems.forEach(item => {
-        item.classList.toggle('active', item.dataset.target === activeId);
-      });
-      bar.style.background = color;
-      bar.style.boxShadow = `0 0 8px ${color}`;
+      if (activeId) setActive(activeId);
     }, 450);
   }, { threshold: 0, rootMargin: '-10% 0px -60% 0px' });
 
@@ -125,6 +131,14 @@ function initChapterTracking() {
     item.addEventListener('click', () => {
       const target = document.getElementById(item.dataset.target);
       if (target) {
+        // Immediately highlight the clicked chapter and lock out the observer
+        // for 1.5s so the smooth-scroll animation can't trigger intermediate chapters
+        clearTimeout(dwellTimer);
+        clearTimeout(navLockTimer);
+        navLocked = true;
+        setActive(item.dataset.target);
+        navLockTimer = setTimeout(() => { navLocked = false; }, 1500);
+
         target.scrollIntoView({ behavior: 'smooth' });
         document.getElementById('sidebar').classList.remove('open');
       }
