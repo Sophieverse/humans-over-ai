@@ -13,8 +13,8 @@
   --bg-card:   #0d0d0d;       /* photo figures, cards */
 
   --text:      #f5f1e9;       /* primary — near white */
-  --text-dim:  #c8c4bc;       /* body paragraphs */
-  --muted:     #7a7670;       /* citations, metadata */
+  --text-dim:  #ece8e0;       /* body paragraphs — bright, readable */
+  --muted:     #b0aca6;       /* citations, metadata */
 
   --border:    #1a1a1a;
   --border-s:  #222;
@@ -298,7 +298,7 @@ body {
 
 .article-col p {
   font-size: 1.05rem; line-height: 1.85;
-  color: var(--text-dim); margin-bottom: 24px;
+  color: var(--text); margin-bottom: 24px;
 }
 .article-col p:last-child { margin-bottom: 0; }
 .article-col strong { color: var(--text); }
@@ -384,7 +384,7 @@ body {
 }
 .pull-quote cite {
   font-family: var(--mono); font-size: 0.62rem;
-  letter-spacing: .07em; color: var(--muted);
+  letter-spacing: .07em; color: var(--text-dim);
   font-style: normal; line-height: 1.6;
 }
 
@@ -615,7 +615,7 @@ figcaption {
 }
 .article-col ul li {
   font-size: 1rem; line-height: 1.75;
-  color: var(--text-dim); padding-left: 20px; margin-bottom: 4px;
+  color: var(--text); padding-left: 20px; margin-bottom: 4px;
   position: relative;
 }
 .article-col ul li::before {
