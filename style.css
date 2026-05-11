@@ -189,13 +189,15 @@ body {
   display: flex; align-items: flex-start; gap: 12px;
   padding: 14px 24px; cursor: pointer;
   border-left: 3px solid transparent;
-  transition: border-color .25s, background .25s;
+  transition: border-color .25s, background .25s, opacity .25s;
   position: relative;
+  opacity: 0.4;
 }
-.sb-item:hover { background: rgba(128,128,128,0.06); }
+.sb-item:hover { background: rgba(128,128,128,0.06); opacity: 0.65; }
 .sb-item.active {
   border-left-color: var(--item-col, #888);
   background: rgba(128,128,128,0.1);
+  opacity: 1;
 }
 
 .sb-num {
