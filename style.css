@@ -290,21 +290,6 @@ body {
   font-style: normal; line-height: 1.6;
 }
 
-/* Indented pull quote (narrower, no side border) */
-.indent-quote {
-  margin: 28px 0 28px 24px;
-  padding: 0;
-  border: none;
-}
-.indent-quote p {
-  font-style: italic; font-size: 1rem;
-  color: var(--text-dim); line-height: 1.75;
-  margin-bottom: 8px;
-}
-.indent-quote cite {
-  font-family: var(--mono); font-size: 0.6rem;
-  color: var(--muted); font-style: normal;
-}
 
 /* The doctrine / closing quote (full-width) */
 .doctrine-wrap {
