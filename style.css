@@ -317,34 +317,43 @@ body {
 }
 .link:hover { opacity: .7; }
 
-/* Sub-section headings — white bold text, chapter-colored flanking lines */
+/* Sub-section headings — full-width breakout, larger font */
 .sub-head {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   font-family: var(--serif);
-  font-size: clamp(15px, 1.8vw, 18px);
+  font-size: clamp(18px, 2.2vw, 24px);
   font-style: italic; font-weight: 700;
   color: var(--text);
   background: var(--ch-dim);
-  padding: 16px 0;
-  margin: 52px 0 28px;
+  padding: 22px clamp(24px, 6vw, 64px);
+  margin-top: 52px;
+  margin-bottom: 28px;
+  /* break out of article-col to full main width */
+  width: calc(100vw - var(--sb-w));
+  margin-left: calc(-1 * clamp(20px, 4vw, 32px) - max(0px, (100vw - var(--sb-w) - var(--col)) / 2));
 }
 .sub-head em { font-weight: 700; font-style: italic; }
 .sub-head::before,
 .sub-head::after {
   content: '';
-  flex: 1 0 16px;
+  flex: 1 0 24px;
   height: 1px;
   background: var(--ch);
-  opacity: 0.45;
+  opacity: 0.5;
 }
 
-/* Section divider */
+/* Section divider — full-width, chapter accent color */
 .ch-divider {
   border: none;
-  border-top: 1px solid var(--border);
-  margin: 48px 0;
+  border-top: 1px solid var(--ch);
+  opacity: 0.4;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  /* break out of article-col */
+  width: calc(100vw - var(--sb-w));
+  margin-left: calc(-1 * clamp(20px, 4vw, 32px) - max(0px, (100vw - var(--sb-w) - var(--col)) / 2));
 }
 
 /* Closing line */
