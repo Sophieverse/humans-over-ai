@@ -325,6 +325,7 @@ body {
 .sub-head {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   font-family: var(--serif);
   font-size: clamp(20px, 2.6vw, 30px);
