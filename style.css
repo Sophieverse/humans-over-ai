@@ -50,15 +50,15 @@
 }
 
 /* Per-chapter accent color */
-#ch1 { --ch: #c41e3a; --ch-dim: rgba(196,30,58,0.1); }
-#ch2 { --ch: #1a7bc4; --ch-dim: rgba(26,123,196,0.1); }
-#ch3 { --ch: #2d9e4f; --ch-dim: rgba(45,158,79,0.1); }
-#ch4 { --ch: #c49a1a; --ch-dim: rgba(196,154,26,0.1); }
+#ch1 { --ch: #c41e3a; --ch-dim: rgba(196,30,58,0.1);  --ch-glow: rgba(196,30,58,0.26); }
+#ch2 { --ch: #1a7bc4; --ch-dim: rgba(26,123,196,0.1); --ch-glow: rgba(26,123,196,0.22); }
+#ch3 { --ch: #2d9e4f; --ch-dim: rgba(45,158,79,0.1);  --ch-glow: rgba(45,158,79,0.22); }
+#ch4 { --ch: #c49a1a; --ch-dim: rgba(196,154,26,0.1); --ch-glow: rgba(196,154,26,0.22); }
 
-[data-theme="light"] #ch1 { --ch-dim: rgba(196,30,58,0.08); }
-[data-theme="light"] #ch2 { --ch-dim: rgba(26,123,196,0.08); }
-[data-theme="light"] #ch3 { --ch-dim: rgba(45,158,79,0.08); }
-[data-theme="light"] #ch4 { --ch-dim: rgba(196,154,26,0.08); }
+[data-theme="light"] #ch1 { --ch-dim: rgba(196,30,58,0.08);  --ch-glow: rgba(196,30,58,0.13); }
+[data-theme="light"] #ch2 { --ch-dim: rgba(26,123,196,0.08); --ch-glow: rgba(26,123,196,0.11); }
+[data-theme="light"] #ch3 { --ch-dim: rgba(45,158,79,0.08);  --ch-glow: rgba(45,158,79,0.11); }
+[data-theme="light"] #ch4 { --ch-dim: rgba(196,154,26,0.08); --ch-glow: rgba(196,154,26,0.11); }
 
 html { scroll-behavior: smooth; font-size: 18px; -webkit-font-smoothing: antialiased; }
 
@@ -255,7 +255,7 @@ body {
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 80px clamp(24px,6vw,100px) 72px;
   position: relative;
-  background: radial-gradient(ellipse 80% 60% at 80% 20%, var(--ch-dim) 0%, transparent 70%);
+  background: radial-gradient(ellipse 90% 65% at 85% 14%, var(--ch-glow, var(--ch-dim)) 0%, transparent 62%);
 }
 
 .ch-hero::after {
@@ -458,6 +458,16 @@ body {
 .stat-hero-label {
   font-family: var(--mono); font-size: 0.52rem;
   letter-spacing: 0.18em; text-transform: uppercase; color: #5a5652;
+}
+
+.stat-hero--compact {
+  padding: clamp(48px, 6vw, 80px) clamp(32px, 8vw, 100px);
+}
+.stat-hero--compact .stat-hero-title {
+  font-size: clamp(36px, 5.5vw, 72px);
+}
+.stat-hero--compact .stat-hero-big {
+  font-size: clamp(52px, 7vw, 96px);
 }
 
 @media (max-width: 540px) {
