@@ -87,7 +87,7 @@ const CHAPTER_COLORS = {
   ch4: '#c49a1a',
   ch5: '#c42d8c',
   ch6: '#7c5cbf',
-  ch7: '#c44e1a',
+  ch7: '#1a8c7c',
 };
 
 function initChapterTracking() {
