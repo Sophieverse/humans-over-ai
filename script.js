@@ -261,10 +261,6 @@ function initAnchorLinks() {
       e.preventDefault();
       const url = window.location.href.split('#')[0] + href;
       navigator.clipboard?.writeText(url);
-      const y = window.scrollY;
-      history.pushState(null, '', href);
-      window.scrollTo({ top: y, behavior: 'instant' });
-      requestAnimationFrame(() => window.scrollTo({ top: y, behavior: 'instant' }));
     });
     return a;
   }
