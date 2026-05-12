@@ -805,6 +805,7 @@ figcaption a:hover { opacity: .7; }
   margin-top: 2.5em;
   margin-bottom: 0.5em;
 }
+.article-col .section-label:first-child { margin-top: 0; }
 
 /* ════════════════════════════════════════════════
    CTA BLOCK & BUTTON
