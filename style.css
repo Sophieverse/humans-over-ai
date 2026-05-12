@@ -56,22 +56,25 @@
 #ch4 { --ch: #c49a1a; --ch-dim: rgba(196,154,26,0.32); --ch-glow: rgba(196,154,26,0.22); }
 #ch5 { --ch: #c42d8c; --ch-dim: rgba(194,45,140,0.32); --ch-glow: rgba(194,45,140,0.26); }
 #ch6 { --ch: #7c5cbf; --ch-dim: rgba(124,92,191,0.32);  --ch-glow: rgba(124,92,191,0.26); }
-#ch7 { --ch: #c44e1a; --ch-dim: rgba(196,78,26,0.32);   --ch-glow: rgba(196,78,26,0.26); }
-#ch7 .ch-divider { margin-top: 20px; margin-bottom: 20px; }
-#ch7 .article-col { padding-top: 20px; padding-bottom: 20px; }
+#ch7 { --ch: #4878a0; --ch-dim: rgba(72,120,160,0.32);   --ch-glow: rgba(72,120,160,0.26); }
+#ch8 { --ch: #c44e1a; --ch-dim: rgba(196,78,26,0.32);   --ch-glow: rgba(196,78,26,0.26); }
+#ch8 .ch-divider { margin-top: 20px; margin-bottom: 20px; }
+#ch8 .article-col { padding-top: 20px; padding-bottom: 20px; }
 
 [data-theme="dark"]  #ch1 { --ch: #e0284a; }
 [data-theme="dark"]  #ch4 { --ch: #e0b420; }
 [data-theme="dark"]  #ch5 { --ch: #e040a0; }
 [data-theme="dark"]  #ch6 { --ch: #9d7ee0; }
-[data-theme="dark"]  #ch7 { --ch: #e06030; }
+[data-theme="dark"]  #ch7 { --ch: #6898c0; }
+[data-theme="dark"]  #ch8 { --ch: #e06030; }
 [data-theme="light"] #ch1 { --ch-dim: rgba(196,30,58,0.18);  --ch-glow: rgba(196,30,58,0.13); }
 [data-theme="light"] #ch2 { --ch-dim: rgba(26,123,196,0.18); --ch-glow: rgba(26,123,196,0.11); }
 [data-theme="light"] #ch3 { --ch-dim: rgba(45,158,79,0.18);  --ch-glow: rgba(45,158,79,0.11); }
 [data-theme="light"] #ch4 { --ch-dim: rgba(196,154,26,0.18); --ch-glow: rgba(196,154,26,0.11); }
 [data-theme="light"] #ch5 { --ch-dim: rgba(194,45,140,0.18); --ch-glow: rgba(194,45,140,0.13); }
 [data-theme="light"] #ch6 { --ch-dim: rgba(124,92,191,0.18); --ch-glow: rgba(124,92,191,0.11); }
-[data-theme="light"] #ch7 { --ch-dim: rgba(196,78,26,0.18);  --ch-glow: rgba(196,78,26,0.11); }
+[data-theme="light"] #ch7 { --ch-dim: rgba(72,120,160,0.18);   --ch-glow: rgba(72,120,160,0.11); }
+[data-theme="light"] #ch8 { --ch-dim: rgba(196,78,26,0.18);  --ch-glow: rgba(196,78,26,0.11); }
 
 html { scroll-behavior: smooth; font-size: 18px; -webkit-font-smoothing: antialiased; }
 
@@ -356,7 +359,7 @@ body {
 }
 #ch1 .ch-title-big em::after,
 #ch2 .ch-title-big em::after { right: 0.62em; }
-#ch7 .ch-title-big em:last-of-type::after { transition-delay: 0.7s; }
+#ch8 .ch-title-big em:last-of-type::after { transition-delay: 0.7s; }
 
 /* ════════════════════════════════════════════════
    ARTICLE COLUMN
@@ -795,7 +798,25 @@ figcaption a:hover { opacity: .7; }
 }
 
 /* ════════════════════════════════════════════════
-   SECTION LABEL (ch7 "For organizations" etc.)
+   LAYOFF ITEM (ch7 company list)
+   ════════════════════════════════════════════════ */
+.layoff-item {
+  border-left: 2px solid var(--ch);
+  padding: 4px 0 4px 18px;
+  margin: 20px 0;
+}
+.layoff-item strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ch);
+  margin-bottom: 6px;
+}
+
+/* ════════════════════════════════════════════════
+   SECTION LABEL (ch8 "For organizations" etc.)
    ════════════════════════════════════════════════ */
 .section-label {
   font-family: var(--mono);
