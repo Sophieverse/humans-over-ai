@@ -248,6 +248,36 @@ function initTheme() {
   });
 }
 
+// ─── ANCHOR LINKS ──────────────────────────────
+
+function initAnchorLinks() {
+  function makeAnchor(href, cls) {
+    const a = document.createElement('a');
+    a.href = href;
+    a.className = 'anchor-link' + (cls ? ' ' + cls : '');
+    a.textContent = '#';
+    a.title = 'Copy link';
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const url = window.location.href.split('#')[0] + href;
+      navigator.clipboard?.writeText(url);
+      history.pushState(null, '', href);
+    });
+    return a;
+  }
+
+  document.querySelectorAll('.sub-head[id]').forEach(el => {
+    el.appendChild(makeAnchor('#' + el.id));
+  });
+
+  document.querySelectorAll('.chapter').forEach(section => {
+    const title = section.querySelector('.ch-title-big');
+    if (title && section.id) {
+      title.appendChild(makeAnchor('#' + section.id, 'anchor-link--title'));
+    }
+  });
+}
+
 // ─── INIT ──────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -268,4 +298,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSubNav();
   initKeyboard();
   initTheme();
+  initAnchorLinks();
 });

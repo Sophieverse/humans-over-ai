@@ -949,3 +949,33 @@ figcaption a:hover { opacity: .7; }
 @media (max-width: 540px) {
   .ch-title-big { font-size: clamp(44px, 14vw, 72px); }
 }
+
+/* ── Anchor links ──────────────────────────────── */
+.sub-head { position: relative; }
+
+.anchor-link {
+  opacity: 0;
+  color: var(--ch);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 0.65em;
+  transition: opacity 0.15s;
+  user-select: none;
+}
+
+.sub-head .anchor-link {
+  position: absolute;
+  right: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.anchor-link--title {
+  vertical-align: middle;
+  margin-left: 0.35em;
+}
+
+.sub-head:hover .anchor-link,
+.ch-title-big:hover .anchor-link { opacity: 0.45; }
+.anchor-link:hover { opacity: 1 !important; }
