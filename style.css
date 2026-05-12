@@ -57,6 +57,8 @@
 #ch5 { --ch: #c42d8c; --ch-dim: rgba(194,45,140,0.32); --ch-glow: rgba(194,45,140,0.26); }
 #ch6 { --ch: #7c5cbf; --ch-dim: rgba(124,92,191,0.32);  --ch-glow: rgba(124,92,191,0.26); }
 #ch7 { --ch: #c44e1a; --ch-dim: rgba(196,78,26,0.32);   --ch-glow: rgba(196,78,26,0.26); }
+#ch7 .ch-divider { margin-top: 20px; margin-bottom: 20px; }
+#ch7 .article-col { padding-top: 20px; padding-bottom: 20px; }
 
 [data-theme="dark"]  #ch1 { --ch: #e0284a; }
 [data-theme="dark"]  #ch4 { --ch: #e0b420; }
