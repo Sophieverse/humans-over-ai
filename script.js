@@ -263,7 +263,8 @@ function initAnchorLinks() {
       navigator.clipboard?.writeText(url);
       const y = window.scrollY;
       history.pushState(null, '', href);
-      window.scrollTo(0, y);
+      window.scrollTo({ top: y, behavior: 'instant' });
+      requestAnimationFrame(() => window.scrollTo({ top: y, behavior: 'instant' }));
     });
     return a;
   }
