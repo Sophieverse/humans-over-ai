@@ -356,6 +356,7 @@ body {
 }
 #ch1 .ch-title-big em::after,
 #ch2 .ch-title-big em::after { right: 0.62em; }
+#ch7 .ch-title-big em:last-of-type::after { transition-delay: 0.7s; }
 
 /* ════════════════════════════════════════════════
    ARTICLE COLUMN
