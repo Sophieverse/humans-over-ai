@@ -9,7 +9,7 @@ const LINES = [
   { t: "────────────────────────────────────────────", c: "dim" },
   { t: "", c: "" },
   { t: "[01] CRIMES AGAINST HUMANITY", c: "hi" },
-  { t: "     > 175 schoolchildren killed by AI-generated strike coordinates.", c: "dim" },
+  { t: "     > 175 people killed by AI-generated strike coordinates.", c: "dim" },
   { t: "     > Human oversight failed to keep up.", c: "dim" },
   { t: "", c: "" },
   { t: "[02] PRIVACY & DEMOCRACY", c: "hi" },
