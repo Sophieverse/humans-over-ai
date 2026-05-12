@@ -86,13 +86,14 @@ const CHAPTER_COLORS = {
   ch3: '#2d9e4f',
   ch4: '#c49a1a',
   ch5: '#c42d8c',
+  ch6: '#a07850',
 };
 
 function initChapterTracking() {
   const chapters = document.querySelectorAll('.chapter');
   const navItems = document.querySelectorAll('.sb-item');
   const bar = document.getElementById('progress-bar');
-  const CHAPTER_ORDER = ['ch1', 'ch2', 'ch3', 'ch4', 'ch5'];
+  const CHAPTER_ORDER = ['ch1', 'ch2', 'ch3', 'ch4', 'ch5', 'ch6'];
   const visible = new Set();
   let dwellTimer = null;
   let navLockTimer = null;
@@ -215,7 +216,7 @@ function initKeyboard() {
       reveal();
       return;
     }
-    const chapters = ['ch1', 'ch2', 'ch3', 'ch4', 'ch5'];
+    const chapters = ['ch1', 'ch2', 'ch3', 'ch4', 'ch5', 'ch6'];
     const active = document.querySelector('.sb-item.active');
     if (!active) return;
     const idx = chapters.indexOf(active.dataset.target);
