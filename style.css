@@ -844,6 +844,45 @@ figcaption a:hover { opacity: .7; }
 .action-pill:hover { background: var(--ch); color: #fff; }
 
 /* ════════════════════════════════════════════════
+   SHARE BLOCK
+   ════════════════════════════════════════════════ */
+.share-block {
+  text-align: center;
+  padding: 0 24px 80px;
+}
+.share-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.share-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.share-pill {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 100px;
+  border: 1px solid var(--border-s);
+  color: var(--text-dim);
+  background: none;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.share-pill:hover { border-color: var(--text-dim); color: var(--text); background: var(--bg-alt); }
+[data-theme="dark"] .share-pill { border-color: rgba(255,255,255,0.14); }
+
+/* ════════════════════════════════════════════════
    SCROLL REVEAL
    ════════════════════════════════════════════════ */
 .reveal {
