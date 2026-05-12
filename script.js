@@ -266,10 +266,6 @@ function initAnchorLinks() {
     return a;
   }
 
-  document.querySelectorAll('.sub-head[id]').forEach(el => {
-    el.appendChild(makeAnchor('#' + el.id));
-  });
-
   document.querySelectorAll('.chapter').forEach(section => {
     const title = section.querySelector('.ch-title-big');
     if (title && section.id) {
