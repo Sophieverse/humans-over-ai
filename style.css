@@ -443,6 +443,11 @@ body {
   width: calc(100vw - var(--sb-w));
   margin-left: calc(-1 * clamp(20px, 4vw, 32px) - max(0px, (100vw - var(--sb-w) - var(--col)) / 2));
 }
+/* dividers that are direct children of .chapter need no breakout offset */
+.chapter > .ch-divider {
+  width: 100%;
+  margin-left: 0;
+}
 
 /* Closing line */
 .closing-line {
